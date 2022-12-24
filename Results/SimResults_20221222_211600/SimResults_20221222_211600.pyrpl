@@ -1,0 +1,3 @@
+result = load_experiment(r"C:/software\Documents\Experiments\testEmplanner", r"testEmplanner", r"59d148f7-9089-45d4-b082-7e78ee7ad76b")
+vismanager.setFrameDuration(0.05)
+scene.Audi_A8_Sedan_1.setTranslation(-1.77452, 0, 0.0326729);scene.Audi_A8_Sedan_1.setRotation(0.00832769, 0, 1, 0);vismanager.viewerBeat()

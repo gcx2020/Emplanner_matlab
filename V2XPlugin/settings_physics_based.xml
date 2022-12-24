@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TNOSettingsType xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <messageSizeCAM>300</messageSizeCAM>
+  <messageSizeDENM>800</messageSizeDENM>
+  <messageSizeBSM>1</messageSizeBSM>
+  <messageSizeGeneric>200</messageSizeGeneric>
+  <PropagationModel>Free Space</PropagationModel>
+</TNOSettingsType>
