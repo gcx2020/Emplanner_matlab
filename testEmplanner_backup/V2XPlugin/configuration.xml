@@ -1,0 +1,1963 @@
+<?xml version="1.0"?>
+<V2XConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Transceivers />
+  <TransmissionRange rangeMeters="500" isRangeInfinite="false" />
+  <ChannelModel communicationModel="cutoff" />
+  <RootMessages>
+    <RootMessage messageType="BSM" displayName="BSM Verbose" version="1" enabled="false" uniqueID="1">
+      <Signal name="BSM" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+        <Signal name="msgID" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+          <EnumerationItem identifier="reserved" value="0" />
+          <EnumerationItem identifier="alaCarteMessage" value="1" />
+          <EnumerationItem identifier="basicSafetyMessage" value="2" />
+          <EnumerationItem identifier="basicSafetyMessageVerbose" value="3" />
+          <EnumerationItem identifier="commonSafetyRequest" value="4" />
+          <EnumerationItem identifier="emergencyVehicleAlert" value="5" />
+          <EnumerationItem identifier="intersectionCollisionAlert" value="6" />
+          <EnumerationItem identifier="mapData" value="7" />
+          <EnumerationItem identifier="nmeaCorrections" value="8" />
+          <EnumerationItem identifier="probeDataManagement" value="9" />
+          <EnumerationItem identifier="probeVehicleData" value="10" />
+          <EnumerationItem identifier="roadSideAlert" value="11" />
+          <EnumerationItem identifier="rtcmCorrections" value="12" />
+          <EnumerationItem identifier="signalPhaseAndTimingMessage" value="13" />
+          <EnumerationItem identifier="signalRequestMessage" value="14" />
+          <EnumerationItem identifier="signalStatusMessage" value="15" />
+          <EnumerationItem identifier="travelerInformation" value="16" />
+        </Signal>
+        <Signal name="msgCnt" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="127" size="0" />
+        <Signal name="id" type="OCTET_STRING" optional="false" enabled="true" rangeMin="4" rangeMax="4" size="4" />
+        <Signal name="secMark" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="65535" size="0" />
+        <Signal name="latitude" type="INTEGER" optional="false" enabled="true" rangeMin="-900000000" rangeMax="900000001" size="0" />
+        <Signal name="longitude" type="INTEGER" optional="false" enabled="true" rangeMin="-1800000000" rangeMax="1800000001" size="0" />
+        <Signal name="elev" type="OCTET_STRING" optional="false" enabled="true" rangeMin="2" rangeMax="2" size="2" />
+        <Signal name="accuracy" type="OCTET_STRING" optional="false" enabled="true" rangeMin="4" rangeMax="4" size="4" />
+        <Signal name="speed" type="OCTET_STRING" optional="false" enabled="true" rangeMin="2" rangeMax="2" size="2" />
+        <Signal name="heading" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="28800" size="0" />
+        <Signal name="angle" type="OCTET_STRING" optional="false" enabled="true" rangeMin="1" rangeMax="1" size="1" />
+        <Signal name="accelSet" type="OCTET_STRING" optional="false" enabled="true" rangeMin="7" rangeMax="7" size="7" />
+        <Signal name="brakes" type="OCTET_STRING" optional="false" enabled="true" rangeMin="2" rangeMax="2" size="2" />
+        <Signal name="size" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+          <Signal name="width" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="1023" size="0" />
+          <Signal name="length" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="16383" size="0" />
+        </Signal>
+        <Signal name="safetyExt" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+          <Signal name="events" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="8192" size="0" />
+          <Signal name="pathHistory" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="initialPosition" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="utcTime" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="year" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="9999" size="0" />
+                <Signal name="month" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="15" size="0" />
+                <Signal name="day" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="31" size="0" />
+                <Signal name="hour" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="31" size="0" />
+                <Signal name="minute" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="63" size="0" />
+                <Signal name="second" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+              </Signal>
+              <Signal name="longitude" type="INTEGER" optional="false" enabled="true" rangeMin="-1800000000" rangeMax="1800000001" size="0" />
+              <Signal name="latitude" type="INTEGER" optional="false" enabled="true" rangeMin="-900000000" rangeMax="900000001" size="0" />
+              <Signal name="elevation" type="OCTET_STRING" optional="true" enabled="false" rangeMin="2" rangeMax="2" size="2" />
+              <Signal name="heading" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="28800" size="0" />
+              <Signal name="speed" type="OCTET_STRING" optional="true" enabled="false" rangeMin="2" rangeMax="2" size="2" />
+              <Signal name="posAccuracy" type="OCTET_STRING" optional="true" enabled="false" rangeMin="4" rangeMax="4" size="4" />
+              <Signal name="timeConfidence" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="unavailable" value="0" />
+                <EnumerationItem identifier="time-100-000" value="1" />
+                <EnumerationItem identifier="time-050-000" value="2" />
+                <EnumerationItem identifier="time-020-000" value="3" />
+                <EnumerationItem identifier="time-010-000" value="4" />
+                <EnumerationItem identifier="time-002-000" value="5" />
+                <EnumerationItem identifier="time-001-000" value="6" />
+                <EnumerationItem identifier="time-000-500" value="7" />
+                <EnumerationItem identifier="time-000-200" value="8" />
+                <EnumerationItem identifier="time-000-100" value="9" />
+                <EnumerationItem identifier="time-000-050" value="10" />
+                <EnumerationItem identifier="time-000-020" value="11" />
+                <EnumerationItem identifier="time-000-010" value="12" />
+                <EnumerationItem identifier="time-000-005" value="13" />
+                <EnumerationItem identifier="time-000-002" value="14" />
+                <EnumerationItem identifier="time-000-001" value="15" />
+                <EnumerationItem identifier="time-000-000-5" value="16" />
+                <EnumerationItem identifier="time-000-000-2" value="17" />
+                <EnumerationItem identifier="time-000-000-1" value="18" />
+                <EnumerationItem identifier="time-000-000-05" value="19" />
+                <EnumerationItem identifier="time-000-000-02" value="20" />
+                <EnumerationItem identifier="time-000-000-01" value="21" />
+                <EnumerationItem identifier="time-000-000-005" value="22" />
+                <EnumerationItem identifier="time-000-000-002" value="23" />
+                <EnumerationItem identifier="time-000-000-001" value="24" />
+                <EnumerationItem identifier="time-000-000-000-5" value="25" />
+                <EnumerationItem identifier="time-000-000-000-2" value="26" />
+                <EnumerationItem identifier="time-000-000-000-1" value="27" />
+                <EnumerationItem identifier="time-000-000-000-05" value="28" />
+                <EnumerationItem identifier="time-000-000-000-02" value="29" />
+                <EnumerationItem identifier="time-000-000-000-01" value="30" />
+                <EnumerationItem identifier="time-000-000-000-005" value="31" />
+                <EnumerationItem identifier="time-000-000-000-002" value="32" />
+                <EnumerationItem identifier="time-000-000-000-001" value="33" />
+                <EnumerationItem identifier="time-000-000-000-000-5" value="34" />
+                <EnumerationItem identifier="time-000-000-000-000-2" value="35" />
+                <EnumerationItem identifier="time-000-000-000-000-1" value="36" />
+                <EnumerationItem identifier="time-000-000-000-000-05" value="37" />
+                <EnumerationItem identifier="time-000-000-000-000-02" value="38" />
+                <EnumerationItem identifier="time-000-000-000-000-01" value="39" />
+              </Signal>
+              <Signal name="posConfidence" type="OCTET_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="1" size="1" />
+              <Signal name="speedConfidence" type="OCTET_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="1" size="1" />
+            </Signal>
+            <Signal name="currGPSstatus" type="BIT_STRING" optional="true" enabled="false" rangeMin="0" rangeMax="7" size="0">
+              <NamedValue identifier="unavailable" value="0" />
+              <NamedValue identifier="isHealthy" value="1" />
+              <NamedValue identifier="isMonitored" value="2" />
+              <NamedValue identifier="baseStationType" value="3" />
+              <NamedValue identifier="aPDOPofUnder5" value="4" />
+              <NamedValue identifier="inViewOfUnder5" value="5" />
+              <NamedValue identifier="localCorrectionsPresent" value="6" />
+              <NamedValue identifier="networkCorrectionsPresent" value="7" />
+            </Signal>
+            <Signal name="itemCnt" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="32" size="0" />
+            <Signal name="crumbData" type="CHOICE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="pathHistoryPointSets_01" type="SEQUENCE_OF" optional="false" enabled="true" rangeMin="1" rangeMax="23" size="1">
+                <Signal name="elementType" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="latOffset" type="INTEGER" optional="false" enabled="true" rangeMin="-131072" rangeMax="131071" size="0" />
+                  <Signal name="longOffset" type="INTEGER" optional="false" enabled="true" rangeMin="-131072" rangeMax="131071" size="0" />
+                  <Signal name="elevationOffset" type="INTEGER" optional="true" enabled="false" rangeMin="-2048" rangeMax="2047" size="0" />
+                  <Signal name="timeOffset" type="INTEGER" optional="true" enabled="false" rangeMin="1" rangeMax="65535" size="1" />
+                  <Signal name="posAccuracy" type="OCTET_STRING" optional="true" enabled="false" rangeMin="4" rangeMax="4" size="4" />
+                  <Signal name="heading" type="INTEGER" optional="true" enabled="false" rangeMin="-128" rangeMax="127" size="0" />
+                  <Signal name="speed" type="OCTET_STRING" optional="true" enabled="false" rangeMin="2" rangeMax="2" size="2" />
+                </Signal>
+              </Signal>
+              <Signal name="pathHistoryPointSets_02" type="OCTET_STRING" optional="false" enabled="false" rangeMin="15" rangeMax="345" size="15" />
+              <Signal name="pathHistoryPointSets_03" type="OCTET_STRING" optional="false" enabled="false" rangeMin="12" rangeMax="276" size="12" />
+              <Signal name="pathHistoryPointSets_04" type="OCTET_STRING" optional="false" enabled="false" rangeMin="8" rangeMax="184" size="8" />
+              <Signal name="pathHistoryPointSets_05" type="OCTET_STRING" optional="false" enabled="false" rangeMin="10" rangeMax="230" size="10" />
+              <Signal name="pathHistoryPointSets_06" type="OCTET_STRING" optional="false" enabled="false" rangeMin="6" rangeMax="138" size="6" />
+              <Signal name="pathHistoryPointSets_07" type="OCTET_STRING" optional="false" enabled="false" rangeMin="11" rangeMax="242" size="11" />
+              <Signal name="pathHistoryPointSets_08" type="OCTET_STRING" optional="false" enabled="false" rangeMin="7" rangeMax="161" size="7" />
+              <Signal name="pathHistoryPointSets_09" type="OCTET_STRING" optional="false" enabled="false" rangeMin="9" rangeMax="196" size="9" />
+              <Signal name="pathHistoryPointSets_10" type="OCTET_STRING" optional="false" enabled="false" rangeMin="5" rangeMax="104" size="5" />
+            </Signal>
+          </Signal>
+          <Signal name="pathPrediction" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="radiusOfCurve" type="INTEGER" optional="false" enabled="true" rangeMin="-32767" rangeMax="32767" size="0" />
+            <Signal name="confidence" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="200" size="0" />
+          </Signal>
+          <Signal name="theRTCM" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="anchorPoint" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="utcTime" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="year" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="9999" size="0" />
+                <Signal name="month" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="15" size="0" />
+                <Signal name="day" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="31" size="0" />
+                <Signal name="hour" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="31" size="0" />
+                <Signal name="minute" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="63" size="0" />
+                <Signal name="second" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+              </Signal>
+              <Signal name="longitude" type="INTEGER" optional="false" enabled="true" rangeMin="-1800000000" rangeMax="1800000001" size="0" />
+              <Signal name="latitude" type="INTEGER" optional="false" enabled="true" rangeMin="-900000000" rangeMax="900000001" size="0" />
+              <Signal name="elevation" type="OCTET_STRING" optional="true" enabled="false" rangeMin="2" rangeMax="2" size="2" />
+              <Signal name="heading" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="28800" size="0" />
+              <Signal name="speed" type="OCTET_STRING" optional="true" enabled="false" rangeMin="2" rangeMax="2" size="2" />
+              <Signal name="posAccuracy" type="OCTET_STRING" optional="true" enabled="false" rangeMin="4" rangeMax="4" size="4" />
+              <Signal name="timeConfidence" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="unavailable" value="0" />
+                <EnumerationItem identifier="time-100-000" value="1" />
+                <EnumerationItem identifier="time-050-000" value="2" />
+                <EnumerationItem identifier="time-020-000" value="3" />
+                <EnumerationItem identifier="time-010-000" value="4" />
+                <EnumerationItem identifier="time-002-000" value="5" />
+                <EnumerationItem identifier="time-001-000" value="6" />
+                <EnumerationItem identifier="time-000-500" value="7" />
+                <EnumerationItem identifier="time-000-200" value="8" />
+                <EnumerationItem identifier="time-000-100" value="9" />
+                <EnumerationItem identifier="time-000-050" value="10" />
+                <EnumerationItem identifier="time-000-020" value="11" />
+                <EnumerationItem identifier="time-000-010" value="12" />
+                <EnumerationItem identifier="time-000-005" value="13" />
+                <EnumerationItem identifier="time-000-002" value="14" />
+                <EnumerationItem identifier="time-000-001" value="15" />
+                <EnumerationItem identifier="time-000-000-5" value="16" />
+                <EnumerationItem identifier="time-000-000-2" value="17" />
+                <EnumerationItem identifier="time-000-000-1" value="18" />
+                <EnumerationItem identifier="time-000-000-05" value="19" />
+                <EnumerationItem identifier="time-000-000-02" value="20" />
+                <EnumerationItem identifier="time-000-000-01" value="21" />
+                <EnumerationItem identifier="time-000-000-005" value="22" />
+                <EnumerationItem identifier="time-000-000-002" value="23" />
+                <EnumerationItem identifier="time-000-000-001" value="24" />
+                <EnumerationItem identifier="time-000-000-000-5" value="25" />
+                <EnumerationItem identifier="time-000-000-000-2" value="26" />
+                <EnumerationItem identifier="time-000-000-000-1" value="27" />
+                <EnumerationItem identifier="time-000-000-000-05" value="28" />
+                <EnumerationItem identifier="time-000-000-000-02" value="29" />
+                <EnumerationItem identifier="time-000-000-000-01" value="30" />
+                <EnumerationItem identifier="time-000-000-000-005" value="31" />
+                <EnumerationItem identifier="time-000-000-000-002" value="32" />
+                <EnumerationItem identifier="time-000-000-000-001" value="33" />
+                <EnumerationItem identifier="time-000-000-000-000-5" value="34" />
+                <EnumerationItem identifier="time-000-000-000-000-2" value="35" />
+                <EnumerationItem identifier="time-000-000-000-000-1" value="36" />
+                <EnumerationItem identifier="time-000-000-000-000-05" value="37" />
+                <EnumerationItem identifier="time-000-000-000-000-02" value="38" />
+                <EnumerationItem identifier="time-000-000-000-000-01" value="39" />
+              </Signal>
+              <Signal name="posConfidence" type="OCTET_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="1" size="1" />
+              <Signal name="speedConfidence" type="OCTET_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="1" size="1" />
+            </Signal>
+            <Signal name="rtcmHeader" type="OCTET_STRING" optional="false" enabled="true" rangeMin="5" rangeMax="5" size="5" />
+            <Signal name="msg1001" type="OCTET_STRING" optional="true" enabled="false" rangeMin="16" rangeMax="124" size="16" />
+            <Signal name="msg1002" type="OCTET_STRING" optional="true" enabled="false" rangeMin="18" rangeMax="156" size="18" />
+            <Signal name="msg1003" type="OCTET_STRING" optional="true" enabled="false" rangeMin="21" rangeMax="210" size="21" />
+            <Signal name="msg1004" type="OCTET_STRING" optional="true" enabled="false" rangeMin="24" rangeMax="258" size="24" />
+            <Signal name="msg1005" type="OCTET_STRING" optional="true" enabled="false" rangeMin="19" rangeMax="19" size="19" />
+            <Signal name="msg1006" type="OCTET_STRING" optional="true" enabled="false" rangeMin="21" rangeMax="21" size="21" />
+            <Signal name="msg1007" type="OCTET_STRING" optional="true" enabled="false" rangeMin="5" rangeMax="36" size="5" />
+            <Signal name="msg1008" type="OCTET_STRING" optional="true" enabled="false" rangeMin="6" rangeMax="68" size="6" />
+            <Signal name="msg1009" type="OCTET_STRING" optional="true" enabled="false" rangeMin="16" rangeMax="136" size="16" />
+            <Signal name="msg1010" type="OCTET_STRING" optional="true" enabled="false" rangeMin="18" rangeMax="166" size="18" />
+            <Signal name="msg1011" type="OCTET_STRING" optional="true" enabled="false" rangeMin="21" rangeMax="222" size="21" />
+            <Signal name="msg1012" type="OCTET_STRING" optional="true" enabled="false" rangeMin="24" rangeMax="268" size="24" />
+            <Signal name="msg1013" type="OCTET_STRING" optional="true" enabled="false" rangeMin="13" rangeMax="27" size="13" />
+            <Signal name="msg1014" type="OCTET_STRING" optional="true" enabled="false" rangeMin="15" rangeMax="15" size="15" />
+            <Signal name="msg1015" type="OCTET_STRING" optional="true" enabled="false" rangeMin="13" rangeMax="69" size="13" />
+            <Signal name="msg1016" type="OCTET_STRING" optional="true" enabled="false" rangeMin="14" rangeMax="81" size="14" />
+            <Signal name="msg1017" type="OCTET_STRING" optional="true" enabled="false" rangeMin="16" rangeMax="115" size="16" />
+            <Signal name="msg1019" type="OCTET_STRING" optional="true" enabled="false" rangeMin="62" rangeMax="62" size="62" />
+            <Signal name="msg1020" type="OCTET_STRING" optional="true" enabled="false" rangeMin="45" rangeMax="45" size="45" />
+            <Signal name="msg1021" type="OCTET_STRING" optional="true" enabled="false" rangeMin="62" rangeMax="62" size="62" />
+            <Signal name="msg1022" type="OCTET_STRING" optional="true" enabled="false" rangeMin="75" rangeMax="75" size="75" />
+            <Signal name="msg1023" type="OCTET_STRING" optional="true" enabled="false" rangeMin="73" rangeMax="73" size="73" />
+            <Signal name="msg1024" type="OCTET_STRING" optional="true" enabled="false" rangeMin="74" rangeMax="74" size="74" />
+            <Signal name="msg1025" type="OCTET_STRING" optional="true" enabled="false" rangeMin="25" rangeMax="25" size="25" />
+            <Signal name="msg1026" type="OCTET_STRING" optional="true" enabled="false" rangeMin="30" rangeMax="30" size="30" />
+            <Signal name="msg1027" type="OCTET_STRING" optional="true" enabled="false" rangeMin="33" rangeMax="33" size="33" />
+            <Signal name="msg1029" type="OCTET_STRING" optional="true" enabled="false" rangeMin="10" rangeMax="69" size="10" />
+            <Signal name="msg1030" type="OCTET_STRING" optional="true" enabled="false" rangeMin="14" rangeMax="105" size="14" />
+            <Signal name="msg1031" type="OCTET_STRING" optional="true" enabled="false" rangeMin="15" rangeMax="107" size="15" />
+            <Signal name="msg1032" type="OCTET_STRING" optional="true" enabled="false" rangeMin="20" rangeMax="20" size="20" />
+          </Signal>
+        </Signal>
+        <Signal name="status" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+          <Signal name="lights" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="256" size="0" />
+          <Signal name="lightBar" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <EnumerationItem identifier="unavailable" value="0" />
+            <EnumerationItem identifier="notInUse" value="1" />
+            <EnumerationItem identifier="inUse" value="2" />
+            <EnumerationItem identifier="sirenInUse" value="3" />
+            <EnumerationItem identifier="yellowCautionLights" value="4" />
+            <EnumerationItem identifier="schooldBusLights" value="5" />
+            <EnumerationItem identifier="arrowSignsActive" value="6" />
+            <EnumerationItem identifier="slowMovingVehicle" value="7" />
+            <EnumerationItem identifier="freqStops" value="8" />
+            <EnumerationItem identifier="reserved" value="9" />
+          </Signal>
+          <Signal name="wipers" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="statusFront" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="unavailable" value="0" />
+              <EnumerationItem identifier="off" value="1" />
+              <EnumerationItem identifier="intermittent" value="2" />
+              <EnumerationItem identifier="low" value="3" />
+              <EnumerationItem identifier="high" value="4" />
+              <EnumerationItem identifier="washerInUse" value="126" />
+              <EnumerationItem identifier="automaticPresent" value="127" />
+            </Signal>
+            <Signal name="rateFront" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="127" size="0" />
+            <Signal name="statusRear" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="unavailable" value="0" />
+              <EnumerationItem identifier="off" value="1" />
+              <EnumerationItem identifier="intermittent" value="2" />
+              <EnumerationItem identifier="low" value="3" />
+              <EnumerationItem identifier="high" value="4" />
+              <EnumerationItem identifier="washerInUse" value="126" />
+              <EnumerationItem identifier="automaticPresent" value="127" />
+            </Signal>
+            <Signal name="rateRear" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="127" size="0" />
+          </Signal>
+          <Signal name="brakeStatus" type="OCTET_STRING" optional="true" enabled="false" rangeMin="2" rangeMax="2" size="2" />
+          <Signal name="brakePressure" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <EnumerationItem identifier="unavailable" value="0" />
+            <EnumerationItem identifier="minPressure" value="1" />
+            <EnumerationItem identifier="bkLvl-2" value="2" />
+            <EnumerationItem identifier="bkLvl-3" value="3" />
+            <EnumerationItem identifier="bkLvl-4" value="4" />
+            <EnumerationItem identifier="bkLvl-5" value="5" />
+            <EnumerationItem identifier="bkLvl-6" value="6" />
+            <EnumerationItem identifier="bkLvl-7" value="7" />
+            <EnumerationItem identifier="bkLvl-8" value="8" />
+            <EnumerationItem identifier="bkLvl-9" value="9" />
+            <EnumerationItem identifier="bkLvl-10" value="10" />
+            <EnumerationItem identifier="bkLvl-11" value="11" />
+            <EnumerationItem identifier="bkLvl-12" value="12" />
+            <EnumerationItem identifier="bkLvl-13" value="13" />
+            <EnumerationItem identifier="bkLvl-14" value="14" />
+            <EnumerationItem identifier="maxPressure" value="15" />
+          </Signal>
+          <Signal name="roadFriction" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="50" size="0" />
+          <Signal name="sunData" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="1000" size="0" />
+          <Signal name="rainData" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <EnumerationItem identifier="none" value="0" />
+            <EnumerationItem identifier="lightMist" value="1" />
+            <EnumerationItem identifier="heavyMist" value="2" />
+            <EnumerationItem identifier="lightRainOrDrizzle" value="3" />
+            <EnumerationItem identifier="rain" value="4" />
+            <EnumerationItem identifier="moderateRain" value="5" />
+            <EnumerationItem identifier="heavyRain" value="6" />
+            <EnumerationItem identifier="heavyDownpour" value="7" />
+          </Signal>
+          <Signal name="airTemp" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="191" size="0" />
+          <Signal name="airPres" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="255" size="0" />
+          <Signal name="steering" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="angle" type="OCTET_STRING" optional="false" enabled="true" rangeMin="1" rangeMax="1" size="1" />
+            <Signal name="confidence" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="unavailable" value="0" />
+              <EnumerationItem identifier="prec2deg" value="1" />
+              <EnumerationItem identifier="prec1deg" value="2" />
+              <EnumerationItem identifier="prec0-02deg" value="3" />
+            </Signal>
+            <Signal name="rate" type="INTEGER" optional="true" enabled="false" rangeMin="-127" rangeMax="127" size="0" />
+            <Signal name="wheels" type="INTEGER" optional="true" enabled="false" rangeMin="-127" rangeMax="127" size="0" />
+          </Signal>
+          <Signal name="accelSets" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="accel4way" type="OCTET_STRING" optional="true" enabled="false" rangeMin="7" rangeMax="7" size="7" />
+            <Signal name="vertAccelThres" type="BIT_STRING" optional="true" enabled="false" rangeMin="0" rangeMax="8" size="0">
+              <NamedValue identifier="allOff" value="0" />
+              <NamedValue identifier="leftFront" value="1" />
+              <NamedValue identifier="leftRear" value="2" />
+              <NamedValue identifier="rightFront" value="4" />
+              <NamedValue identifier="rightRear" value="8" />
+            </Signal>
+            <Signal name="yawRateCon" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="unavailable" value="0" />
+              <EnumerationItem identifier="degSec-100-00" value="1" />
+              <EnumerationItem identifier="degSec-010-00" value="2" />
+              <EnumerationItem identifier="degSec-005-00" value="3" />
+              <EnumerationItem identifier="degSec-001-00" value="4" />
+              <EnumerationItem identifier="degSec-000-10" value="5" />
+              <EnumerationItem identifier="degSec-000-05" value="6" />
+              <EnumerationItem identifier="degSec-000-01" value="7" />
+            </Signal>
+            <Signal name="hozAccelCon" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="unavailable" value="0" />
+              <EnumerationItem identifier="accl-100-00" value="1" />
+              <EnumerationItem identifier="accl-010-00" value="2" />
+              <EnumerationItem identifier="accl-005-00" value="3" />
+              <EnumerationItem identifier="accl-001-00" value="4" />
+              <EnumerationItem identifier="accl-000-10" value="5" />
+              <EnumerationItem identifier="accl-000-05" value="6" />
+              <EnumerationItem identifier="accl-000-01" value="7" />
+            </Signal>
+            <Signal name="confidenceSet" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="accelConfidence" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="yawRate" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="unavailable" value="0" />
+                  <EnumerationItem identifier="degSec-100-00" value="1" />
+                  <EnumerationItem identifier="degSec-010-00" value="2" />
+                  <EnumerationItem identifier="degSec-005-00" value="3" />
+                  <EnumerationItem identifier="degSec-001-00" value="4" />
+                  <EnumerationItem identifier="degSec-000-10" value="5" />
+                  <EnumerationItem identifier="degSec-000-05" value="6" />
+                  <EnumerationItem identifier="degSec-000-01" value="7" />
+                </Signal>
+                <Signal name="acceleration" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="unavailable" value="0" />
+                  <EnumerationItem identifier="accl-100-00" value="1" />
+                  <EnumerationItem identifier="accl-010-00" value="2" />
+                  <EnumerationItem identifier="accl-005-00" value="3" />
+                  <EnumerationItem identifier="accl-001-00" value="4" />
+                  <EnumerationItem identifier="accl-000-10" value="5" />
+                  <EnumerationItem identifier="accl-000-05" value="6" />
+                  <EnumerationItem identifier="accl-000-01" value="7" />
+                </Signal>
+                <Signal name="steeringWheelAngle" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="unavailable" value="0" />
+                  <EnumerationItem identifier="prec2deg" value="1" />
+                  <EnumerationItem identifier="prec1deg" value="2" />
+                  <EnumerationItem identifier="prec0-02deg" value="3" />
+                </Signal>
+              </Signal>
+              <Signal name="speedConfidence" type="OCTET_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="1" size="1" />
+              <Signal name="timeConfidence" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="unavailable" value="0" />
+                <EnumerationItem identifier="time-100-000" value="1" />
+                <EnumerationItem identifier="time-050-000" value="2" />
+                <EnumerationItem identifier="time-020-000" value="3" />
+                <EnumerationItem identifier="time-010-000" value="4" />
+                <EnumerationItem identifier="time-002-000" value="5" />
+                <EnumerationItem identifier="time-001-000" value="6" />
+                <EnumerationItem identifier="time-000-500" value="7" />
+                <EnumerationItem identifier="time-000-200" value="8" />
+                <EnumerationItem identifier="time-000-100" value="9" />
+                <EnumerationItem identifier="time-000-050" value="10" />
+                <EnumerationItem identifier="time-000-020" value="11" />
+                <EnumerationItem identifier="time-000-010" value="12" />
+                <EnumerationItem identifier="time-000-005" value="13" />
+                <EnumerationItem identifier="time-000-002" value="14" />
+                <EnumerationItem identifier="time-000-001" value="15" />
+                <EnumerationItem identifier="time-000-000-5" value="16" />
+                <EnumerationItem identifier="time-000-000-2" value="17" />
+                <EnumerationItem identifier="time-000-000-1" value="18" />
+                <EnumerationItem identifier="time-000-000-05" value="19" />
+                <EnumerationItem identifier="time-000-000-02" value="20" />
+                <EnumerationItem identifier="time-000-000-01" value="21" />
+                <EnumerationItem identifier="time-000-000-005" value="22" />
+                <EnumerationItem identifier="time-000-000-002" value="23" />
+                <EnumerationItem identifier="time-000-000-001" value="24" />
+                <EnumerationItem identifier="time-000-000-000-5" value="25" />
+                <EnumerationItem identifier="time-000-000-000-2" value="26" />
+                <EnumerationItem identifier="time-000-000-000-1" value="27" />
+                <EnumerationItem identifier="time-000-000-000-05" value="28" />
+                <EnumerationItem identifier="time-000-000-000-02" value="29" />
+                <EnumerationItem identifier="time-000-000-000-01" value="30" />
+                <EnumerationItem identifier="time-000-000-000-005" value="31" />
+                <EnumerationItem identifier="time-000-000-000-002" value="32" />
+                <EnumerationItem identifier="time-000-000-000-001" value="33" />
+                <EnumerationItem identifier="time-000-000-000-000-5" value="34" />
+                <EnumerationItem identifier="time-000-000-000-000-2" value="35" />
+                <EnumerationItem identifier="time-000-000-000-000-1" value="36" />
+                <EnumerationItem identifier="time-000-000-000-000-05" value="37" />
+                <EnumerationItem identifier="time-000-000-000-000-02" value="38" />
+                <EnumerationItem identifier="time-000-000-000-000-01" value="39" />
+              </Signal>
+              <Signal name="posConfidence" type="OCTET_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="1" size="1" />
+              <Signal name="steerConfidence" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="unavailable" value="0" />
+                <EnumerationItem identifier="prec2deg" value="1" />
+                <EnumerationItem identifier="prec1deg" value="2" />
+                <EnumerationItem identifier="prec0-02deg" value="3" />
+              </Signal>
+              <Signal name="throttleConfidence" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="unavailable" value="0" />
+                <EnumerationItem identifier="prec10percent" value="1" />
+                <EnumerationItem identifier="prec1percent" value="2" />
+                <EnumerationItem identifier="prec0-5percent" value="3" />
+              </Signal>
+            </Signal>
+          </Signal>
+          <Signal name="object" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="obDist" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="32767" size="0" />
+            <Signal name="obDirect" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="28800" size="0" />
+            <Signal name="dateTime" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="year" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="9999" size="0" />
+              <Signal name="month" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="15" size="0" />
+              <Signal name="day" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="31" size="0" />
+              <Signal name="hour" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="31" size="0" />
+              <Signal name="minute" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="63" size="0" />
+              <Signal name="second" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+            </Signal>
+          </Signal>
+          <Signal name="fullPos" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="utcTime" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="year" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="9999" size="0" />
+              <Signal name="month" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="15" size="0" />
+              <Signal name="day" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="31" size="0" />
+              <Signal name="hour" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="31" size="0" />
+              <Signal name="minute" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="63" size="0" />
+              <Signal name="second" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+            </Signal>
+            <Signal name="longitude" type="INTEGER" optional="false" enabled="true" rangeMin="-1800000000" rangeMax="1800000001" size="0" />
+            <Signal name="latitude" type="INTEGER" optional="false" enabled="true" rangeMin="-900000000" rangeMax="900000001" size="0" />
+            <Signal name="elevation" type="OCTET_STRING" optional="true" enabled="false" rangeMin="2" rangeMax="2" size="2" />
+            <Signal name="heading" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="28800" size="0" />
+            <Signal name="speed" type="OCTET_STRING" optional="true" enabled="false" rangeMin="2" rangeMax="2" size="2" />
+            <Signal name="posAccuracy" type="OCTET_STRING" optional="true" enabled="false" rangeMin="4" rangeMax="4" size="4" />
+            <Signal name="timeConfidence" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="unavailable" value="0" />
+              <EnumerationItem identifier="time-100-000" value="1" />
+              <EnumerationItem identifier="time-050-000" value="2" />
+              <EnumerationItem identifier="time-020-000" value="3" />
+              <EnumerationItem identifier="time-010-000" value="4" />
+              <EnumerationItem identifier="time-002-000" value="5" />
+              <EnumerationItem identifier="time-001-000" value="6" />
+              <EnumerationItem identifier="time-000-500" value="7" />
+              <EnumerationItem identifier="time-000-200" value="8" />
+              <EnumerationItem identifier="time-000-100" value="9" />
+              <EnumerationItem identifier="time-000-050" value="10" />
+              <EnumerationItem identifier="time-000-020" value="11" />
+              <EnumerationItem identifier="time-000-010" value="12" />
+              <EnumerationItem identifier="time-000-005" value="13" />
+              <EnumerationItem identifier="time-000-002" value="14" />
+              <EnumerationItem identifier="time-000-001" value="15" />
+              <EnumerationItem identifier="time-000-000-5" value="16" />
+              <EnumerationItem identifier="time-000-000-2" value="17" />
+              <EnumerationItem identifier="time-000-000-1" value="18" />
+              <EnumerationItem identifier="time-000-000-05" value="19" />
+              <EnumerationItem identifier="time-000-000-02" value="20" />
+              <EnumerationItem identifier="time-000-000-01" value="21" />
+              <EnumerationItem identifier="time-000-000-005" value="22" />
+              <EnumerationItem identifier="time-000-000-002" value="23" />
+              <EnumerationItem identifier="time-000-000-001" value="24" />
+              <EnumerationItem identifier="time-000-000-000-5" value="25" />
+              <EnumerationItem identifier="time-000-000-000-2" value="26" />
+              <EnumerationItem identifier="time-000-000-000-1" value="27" />
+              <EnumerationItem identifier="time-000-000-000-05" value="28" />
+              <EnumerationItem identifier="time-000-000-000-02" value="29" />
+              <EnumerationItem identifier="time-000-000-000-01" value="30" />
+              <EnumerationItem identifier="time-000-000-000-005" value="31" />
+              <EnumerationItem identifier="time-000-000-000-002" value="32" />
+              <EnumerationItem identifier="time-000-000-000-001" value="33" />
+              <EnumerationItem identifier="time-000-000-000-000-5" value="34" />
+              <EnumerationItem identifier="time-000-000-000-000-2" value="35" />
+              <EnumerationItem identifier="time-000-000-000-000-1" value="36" />
+              <EnumerationItem identifier="time-000-000-000-000-05" value="37" />
+              <EnumerationItem identifier="time-000-000-000-000-02" value="38" />
+              <EnumerationItem identifier="time-000-000-000-000-01" value="39" />
+            </Signal>
+            <Signal name="posConfidence" type="OCTET_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="1" size="1" />
+            <Signal name="speedConfidence" type="OCTET_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="1" size="1" />
+          </Signal>
+          <Signal name="throttlePos" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="200" size="0" />
+          <Signal name="speedHeadC" type="OCTET_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="1" size="1" />
+          <Signal name="speedC" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <EnumerationItem identifier="unavailable" value="0" />
+            <EnumerationItem identifier="prec100ms" value="1" />
+            <EnumerationItem identifier="prec10ms" value="2" />
+            <EnumerationItem identifier="prec5ms" value="3" />
+            <EnumerationItem identifier="prec1ms" value="4" />
+            <EnumerationItem identifier="prec0-1ms" value="5" />
+            <EnumerationItem identifier="prec0-05ms" value="6" />
+            <EnumerationItem identifier="prec0-01ms" value="7" />
+          </Signal>
+          <Signal name="vehicleData" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="height" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="127" size="0" />
+            <Signal name="bumpers" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="frnt" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="127" size="0" />
+              <Signal name="rear" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="127" size="0" />
+            </Signal>
+            <Signal name="mass" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="127" size="1" />
+            <Signal name="trailerWeight" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="65535" size="0" />
+            <Signal name="type" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="none" value="0" />
+              <EnumerationItem identifier="unknown" value="1" />
+              <EnumerationItem identifier="special" value="2" />
+              <EnumerationItem identifier="moto" value="3" />
+              <EnumerationItem identifier="car" value="4" />
+              <EnumerationItem identifier="carOther" value="5" />
+              <EnumerationItem identifier="bus" value="6" />
+              <EnumerationItem identifier="axleCnt2" value="7" />
+              <EnumerationItem identifier="axleCnt3" value="8" />
+              <EnumerationItem identifier="axleCnt4" value="9" />
+              <EnumerationItem identifier="axleCnt4Trailer" value="10" />
+              <EnumerationItem identifier="axleCnt5Trailer" value="11" />
+              <EnumerationItem identifier="axleCnt6Trailer" value="12" />
+              <EnumerationItem identifier="axleCnt5MultiTrailer" value="13" />
+              <EnumerationItem identifier="axleCnt6MultiTrailer" value="14" />
+              <EnumerationItem identifier="axleCnt7MultiTrailer" value="15" />
+            </Signal>
+          </Signal>
+          <Signal name="vehicleIdent" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="name" type="IA5String" optional="true" enabled="false" rangeMin="1" rangeMax="63" size="1" />
+            <Signal name="vin" type="OCTET_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="17" size="1" />
+            <Signal name="ownerCode" type="IA5String" optional="true" enabled="false" rangeMin="1" rangeMax="32" size="1" />
+            <Signal name="id" type="OCTET_STRING" optional="true" enabled="false" rangeMin="4" rangeMax="4" size="4" />
+            <Signal name="vehicleType" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="none" value="0" />
+              <EnumerationItem identifier="unknown" value="1" />
+              <EnumerationItem identifier="special" value="2" />
+              <EnumerationItem identifier="moto" value="3" />
+              <EnumerationItem identifier="car" value="4" />
+              <EnumerationItem identifier="carOther" value="5" />
+              <EnumerationItem identifier="bus" value="6" />
+              <EnumerationItem identifier="axleCnt2" value="7" />
+              <EnumerationItem identifier="axleCnt3" value="8" />
+              <EnumerationItem identifier="axleCnt4" value="9" />
+              <EnumerationItem identifier="axleCnt4Trailer" value="10" />
+              <EnumerationItem identifier="axleCnt5Trailer" value="11" />
+              <EnumerationItem identifier="axleCnt6Trailer" value="12" />
+              <EnumerationItem identifier="axleCnt5MultiTrailer" value="13" />
+              <EnumerationItem identifier="axleCnt6MultiTrailer" value="14" />
+              <EnumerationItem identifier="axleCnt7MultiTrailer" value="15" />
+            </Signal>
+            <Signal name="vehicleClass" type="CHOICE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="vGroup" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="all-vehicles" value="9217" />
+                <EnumerationItem identifier="bicycles" value="9218" />
+                <EnumerationItem identifier="motorcycles" value="9219" />
+                <EnumerationItem identifier="cars" value="9220" />
+                <EnumerationItem identifier="light-vehicles" value="9221" />
+                <EnumerationItem identifier="cars-and-light-vehicles" value="9222" />
+                <EnumerationItem identifier="cars-with-trailers" value="9223" />
+                <EnumerationItem identifier="cars-with-recreational-trailers" value="9224" />
+                <EnumerationItem identifier="vehicles-with-trailers" value="9225" />
+                <EnumerationItem identifier="heavy-vehicles" value="9226" />
+                <EnumerationItem identifier="trucks" value="9227" />
+                <EnumerationItem identifier="buses" value="9228" />
+                <EnumerationItem identifier="articulated-buses" value="9229" />
+                <EnumerationItem identifier="school-buses" value="9230" />
+                <EnumerationItem identifier="vehicles-with-semi-trailers" value="9231" />
+                <EnumerationItem identifier="vehicles-with-double-trailers" value="9232" />
+                <EnumerationItem identifier="high-profile-vehicles" value="9233" />
+                <EnumerationItem identifier="wide-vehicles" value="9234" />
+                <EnumerationItem identifier="long-vehicles" value="9235" />
+                <EnumerationItem identifier="hazardous-loads" value="9236" />
+                <EnumerationItem identifier="exceptional-loads" value="9237" />
+                <EnumerationItem identifier="abnormal-loads" value="9238" />
+                <EnumerationItem identifier="convoys" value="9239" />
+                <EnumerationItem identifier="maintenance-vehicles" value="9240" />
+                <EnumerationItem identifier="delivery-vehicles" value="9241" />
+                <EnumerationItem identifier="vehicles-with-even-numbered-license-plates" value="9242" />
+                <EnumerationItem identifier="vehicles-with-odd-numbered-license-plates" value="9243" />
+                <EnumerationItem identifier="vehicles-with-parking-permits" value="9244" />
+                <EnumerationItem identifier="vehicles-with-catalytic-converters" value="9245" />
+                <EnumerationItem identifier="vehicles-without-catalytic-converters" value="9246" />
+                <EnumerationItem identifier="gas-powered-vehicles" value="9247" />
+                <EnumerationItem identifier="diesel-powered-vehicles" value="9248" />
+                <EnumerationItem identifier="lPG-vehicles" value="9249" />
+                <EnumerationItem identifier="military-convoys" value="9250" />
+                <EnumerationItem identifier="military-vehicles" value="9251" />
+              </Signal>
+              <Signal name="rGroup" type="ENUMERATED" optional="false" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="emergency-vehicle-units" value="9729" />
+                <EnumerationItem identifier="federal-law-enforcement-units" value="9730" />
+                <EnumerationItem identifier="state-police-units" value="9731" />
+                <EnumerationItem identifier="county-police-units" value="9732" />
+                <EnumerationItem identifier="local-police-units" value="9733" />
+                <EnumerationItem identifier="ambulance-units" value="9734" />
+                <EnumerationItem identifier="rescue-units" value="9735" />
+                <EnumerationItem identifier="fire-units" value="9736" />
+                <EnumerationItem identifier="hAZMAT-units" value="9737" />
+                <EnumerationItem identifier="light-tow-unit" value="9738" />
+                <EnumerationItem identifier="heavy-tow-unit" value="9739" />
+                <EnumerationItem identifier="freeway-service-patrols" value="9740" />
+                <EnumerationItem identifier="transportation-response-units" value="9741" />
+                <EnumerationItem identifier="private-contractor-response-units" value="9742" />
+              </Signal>
+              <Signal name="rEquip" type="ENUMERATED" optional="false" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="ground-fire-suppression" value="9985" />
+                <EnumerationItem identifier="heavy-ground-equipment" value="9986" />
+                <EnumerationItem identifier="aircraft" value="9988" />
+                <EnumerationItem identifier="marine-equipment" value="9989" />
+                <EnumerationItem identifier="support-equipment" value="9990" />
+                <EnumerationItem identifier="medical-rescue-unit" value="9991" />
+                <EnumerationItem identifier="other" value="9993" />
+                <EnumerationItem identifier="ground-fire-suppression-other" value="9994" />
+                <EnumerationItem identifier="engine" value="9995" />
+                <EnumerationItem identifier="truck-or-aerial" value="9996" />
+                <EnumerationItem identifier="quint" value="9997" />
+                <EnumerationItem identifier="tanker-pumper-combination" value="9998" />
+                <EnumerationItem identifier="brush-truck" value="10000" />
+                <EnumerationItem identifier="aircraft-rescue-firefighting" value="10001" />
+                <EnumerationItem identifier="heavy-ground-equipment-other" value="10004" />
+                <EnumerationItem identifier="dozer-or-plow" value="10005" />
+                <EnumerationItem identifier="tractor" value="10006" />
+                <EnumerationItem identifier="tanker-or-tender" value="10008" />
+                <EnumerationItem identifier="aircraft-other" value="10024" />
+                <EnumerationItem identifier="aircraft-fixed-wing-tanker" value="10025" />
+                <EnumerationItem identifier="helitanker" value="10026" />
+                <EnumerationItem identifier="helicopter" value="10027" />
+                <EnumerationItem identifier="marine-equipment-other" value="10034" />
+                <EnumerationItem identifier="fire-boat-with-pump" value="10035" />
+                <EnumerationItem identifier="boat-no-pump" value="10036" />
+                <EnumerationItem identifier="support-apparatus-other" value="10044" />
+                <EnumerationItem identifier="breathing-apparatus-support" value="10045" />
+                <EnumerationItem identifier="light-and-air-unit" value="10046" />
+                <EnumerationItem identifier="medical-rescue-unit-other" value="10054" />
+                <EnumerationItem identifier="rescue-unit" value="10055" />
+                <EnumerationItem identifier="urban-search-rescue-unit" value="10056" />
+                <EnumerationItem identifier="high-angle-rescue" value="10057" />
+                <EnumerationItem identifier="crash-fire-rescue" value="10058" />
+                <EnumerationItem identifier="bLS-unit" value="10059" />
+                <EnumerationItem identifier="aLS-unit" value="10060" />
+                <EnumerationItem identifier="mobile-command-post" value="10075" />
+                <EnumerationItem identifier="chief-officer-car" value="10076" />
+                <EnumerationItem identifier="hAZMAT-unit" value="10077" />
+                <EnumerationItem identifier="type-i-hand-crew" value="10078" />
+                <EnumerationItem identifier="type-ii-hand-crew" value="10079" />
+                <EnumerationItem identifier="privately-owned-vehicle" value="10083" />
+                <EnumerationItem identifier="other-apparatus-resource" value="10084" />
+                <EnumerationItem identifier="ambulance" value="10085" />
+                <EnumerationItem identifier="bomb-squad-van" value="10086" />
+                <EnumerationItem identifier="combine-harvester" value="10087" />
+                <EnumerationItem identifier="construction-vehicle" value="10088" />
+                <EnumerationItem identifier="farm-tractor" value="10089" />
+                <EnumerationItem identifier="grass-cutting-machines" value="10090" />
+                <EnumerationItem identifier="hAZMAT-containment-tow" value="10091" />
+                <EnumerationItem identifier="heavy-tow" value="10092" />
+                <EnumerationItem identifier="hedge-cutting-machines" value="10093" />
+                <EnumerationItem identifier="light-tow" value="10094" />
+                <EnumerationItem identifier="mobile-crane" value="10095" />
+                <EnumerationItem identifier="refuse-collection-vehicle" value="10096" />
+                <EnumerationItem identifier="resurfacing-vehicle" value="10097" />
+                <EnumerationItem identifier="road-sweeper" value="10098" />
+                <EnumerationItem identifier="roadside-litter-collection-crews" value="10099" />
+                <EnumerationItem identifier="salvage-vehicle" value="10100" />
+                <EnumerationItem identifier="sand-truck" value="10101" />
+                <EnumerationItem identifier="snowplow" value="10102" />
+                <EnumerationItem identifier="steam-roller" value="10103" />
+                <EnumerationItem identifier="swat-team-van" value="10104" />
+                <EnumerationItem identifier="track-laying-vehicle" value="10105" />
+                <EnumerationItem identifier="unknown-vehicle" value="10106" />
+                <EnumerationItem identifier="white-lining-vehicle" value="10107" />
+                <EnumerationItem identifier="dump-truck" value="10108" />
+                <EnumerationItem identifier="supervisor-vehicle" value="10109" />
+                <EnumerationItem identifier="snow-blower" value="10110" />
+                <EnumerationItem identifier="rotary-snow-blower" value="10111" />
+                <EnumerationItem identifier="road-grader" value="10112" />
+                <EnumerationItem identifier="steam-truck" value="10113" />
+                <EnumerationItem identifier="flatbed-tow" value="10114" />
+              </Signal>
+            </Signal>
+          </Signal>
+          <Signal name="j1939data" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="tires" type="SEQUENCE_OF" optional="true" enabled="false" rangeMin="0" rangeMax="16" size="1">
+              <Signal name="elementType" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="location" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="255" size="0" />
+                <Signal name="pressure" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="1000" size="0" />
+                <Signal name="temp" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+                <Signal name="wheelSensorStatus" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="off" value="0" />
+                  <EnumerationItem identifier="on" value="1" />
+                  <EnumerationItem identifier="notDefined" value="2" />
+                  <EnumerationItem identifier="notSupoprted" value="3" />
+                </Signal>
+                <Signal name="wheelEndElectFault" type="BIT_STRING" optional="true" enabled="false" rangeMin="1" rangeMax="4" size="1">
+                  <NamedValue identifier="bitOne" value="1" />
+                  <NamedValue identifier="bitTwo" value="2" />
+                  <NamedValue identifier="bitThree" value="3" />
+                  <NamedValue identifier="bitFour" value="4" />
+                </Signal>
+                <Signal name="leakageRate" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+                <Signal name="detection" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="noData" value="0" />
+                  <EnumerationItem identifier="overPressure" value="1" />
+                  <EnumerationItem identifier="noWarningPressure" value="2" />
+                  <EnumerationItem identifier="underPressure" value="3" />
+                  <EnumerationItem identifier="extremeUnderPressure" value="4" />
+                  <EnumerationItem identifier="undefined" value="5" />
+                  <EnumerationItem identifier="errorIndicator" value="6" />
+                  <EnumerationItem identifier="notAvailable" value="7" />
+                </Signal>
+              </Signal>
+            </Signal>
+            <Signal name="axle" type="SEQUENCE_OF" optional="true" enabled="false" rangeMin="0" rangeMax="16" size="1">
+              <Signal name="elementType" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="location" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="127" size="0" />
+                <Signal name="weight" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+              </Signal>
+            </Signal>
+            <Signal name="trailerWeight" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+            <Signal name="cargoWeight" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+            <Signal name="steeringAxleTemperature" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="255" size="0" />
+            <Signal name="driveAxleLocation" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="255" size="0" />
+            <Signal name="driveAxleLiftAirPressure" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="1000" size="0" />
+            <Signal name="driveAxleTemperature" type="INTEGER" optional="true" enabled="false" rangeMin="-40" rangeMax="210" size="0" />
+            <Signal name="driveAxleLubePressure" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="1000" size="0" />
+            <Signal name="steeringAxleLubePressure" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="255" size="0" />
+          </Signal>
+          <Signal name="weatherReport" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="isRaining" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="precip" value="1" />
+              <EnumerationItem identifier="noPrecip" value="2" />
+              <EnumerationItem identifier="error" value="3" />
+            </Signal>
+            <Signal name="rainRate" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+            <Signal name="precipSituation" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="other" value="1" />
+              <EnumerationItem identifier="unknown" value="2" />
+              <EnumerationItem identifier="noPrecipitation" value="3" />
+              <EnumerationItem identifier="unidentifiedSlight" value="4" />
+              <EnumerationItem identifier="unidentifiedModerate" value="5" />
+              <EnumerationItem identifier="unidentifiedHeavy" value="6" />
+              <EnumerationItem identifier="snowSlight" value="7" />
+              <EnumerationItem identifier="snowModerate" value="8" />
+              <EnumerationItem identifier="snowHeavy" value="9" />
+              <EnumerationItem identifier="rainSlight" value="10" />
+              <EnumerationItem identifier="rainModerate" value="11" />
+              <EnumerationItem identifier="rainHeavy" value="12" />
+              <EnumerationItem identifier="frozenPrecipitationSlight" value="13" />
+              <EnumerationItem identifier="frozenPrecipitationModerate" value="14" />
+              <EnumerationItem identifier="frozenPrecipitationHeavy" value="15" />
+            </Signal>
+            <Signal name="solarRadiation" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="65535" size="0" />
+            <Signal name="friction" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="101" size="0" />
+          </Signal>
+          <Signal name="gpsStatus" type="BIT_STRING" optional="true" enabled="false" rangeMin="0" rangeMax="7" size="0">
+            <NamedValue identifier="unavailable" value="0" />
+            <NamedValue identifier="isHealthy" value="1" />
+            <NamedValue identifier="isMonitored" value="2" />
+            <NamedValue identifier="baseStationType" value="3" />
+            <NamedValue identifier="aPDOPofUnder5" value="4" />
+            <NamedValue identifier="inViewOfUnder5" value="5" />
+            <NamedValue identifier="localCorrectionsPresent" value="6" />
+            <NamedValue identifier="networkCorrectionsPresent" value="7" />
+          </Signal>
+        </Signal>
+      </Signal>
+    </RootMessage>
+    <RootMessage messageType="CAM" version="1" enabled="false" uniqueID="2">
+      <Signal name="CAM" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+        <Signal name="header" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+          <Signal name="protocolVersion" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+            <NamedValue identifier="currentVersion" value="1" />
+          </Signal>
+          <Signal name="messageID" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+            <NamedValue identifier="denm" value="1" />
+            <NamedValue identifier="cam" value="2" />
+            <NamedValue identifier="poi" value="3" />
+            <NamedValue identifier="spat" value="4" />
+            <NamedValue identifier="map" value="5" />
+            <NamedValue identifier="ivi" value="6" />
+            <NamedValue identifier="ev-rsr" value="7" />
+          </Signal>
+          <Signal name="stationID" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4294967295" size="0" />
+        </Signal>
+        <Signal name="cam" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+          <Signal name="generationDeltaTime" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="65535" size="0">
+            <NamedValue identifier="oneMilliSec" value="1" />
+          </Signal>
+          <Signal name="camParameters" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="basicContainer" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="stationType" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+                <NamedValue identifier="unknown" value="0" />
+                <NamedValue identifier="pedestrian" value="1" />
+                <NamedValue identifier="cyclist" value="2" />
+                <NamedValue identifier="moped" value="3" />
+                <NamedValue identifier="motorcycle" value="4" />
+                <NamedValue identifier="passengerCar" value="5" />
+                <NamedValue identifier="bus" value="6" />
+                <NamedValue identifier="lightTruck" value="7" />
+                <NamedValue identifier="heavyTruck" value="8" />
+                <NamedValue identifier="trailer" value="9" />
+                <NamedValue identifier="specialVehicles" value="10" />
+                <NamedValue identifier="tram" value="11" />
+                <NamedValue identifier="roadSideUnit" value="15" />
+              </Signal>
+              <Signal name="referencePosition" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="latitude" type="INTEGER" optional="false" enabled="true" rangeMin="-900000000" rangeMax="900000001" size="0">
+                  <NamedValue identifier="oneMicrodegreeSouth" value="-10" />
+                  <NamedValue identifier="oneMicrodegreeNorth" value="10" />
+                  <NamedValue identifier="unavailable" value="900000001" />
+                </Signal>
+                <Signal name="longitude" type="INTEGER" optional="false" enabled="true" rangeMin="-1800000000" rangeMax="1800000001" size="0">
+                  <NamedValue identifier="oneMicrodegreeWest" value="-10" />
+                  <NamedValue identifier="oneMicrodegreeEast" value="10" />
+                  <NamedValue identifier="unavailable" value="1800000001" />
+                </Signal>
+                <Signal name="positionConfidenceEllipse" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="semiMajorConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4095" size="0">
+                    <NamedValue identifier="oneCentimeter" value="1" />
+                    <NamedValue identifier="outOfRange" value="4094" />
+                    <NamedValue identifier="unavailable" value="4095" />
+                  </Signal>
+                  <Signal name="semiMinorConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4095" size="0">
+                    <NamedValue identifier="oneCentimeter" value="1" />
+                    <NamedValue identifier="outOfRange" value="4094" />
+                    <NamedValue identifier="unavailable" value="4095" />
+                  </Signal>
+                  <Signal name="semiMajorOrientation" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="3601" size="0">
+                    <NamedValue identifier="wgs84North" value="0" />
+                    <NamedValue identifier="wgs84East" value="900" />
+                    <NamedValue identifier="wgs84South" value="1800" />
+                    <NamedValue identifier="wgs84West" value="2700" />
+                    <NamedValue identifier="unavailable" value="3601" />
+                  </Signal>
+                </Signal>
+                <Signal name="altitude" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="altitudeValue" type="INTEGER" optional="false" enabled="true" rangeMin="-100000" rangeMax="800001" size="0">
+                    <NamedValue identifier="referenceEllipsoidSurface" value="0" />
+                    <NamedValue identifier="oneCentimeter" value="1" />
+                    <NamedValue identifier="unavailable" value="800001" />
+                  </Signal>
+                  <Signal name="altitudeConfidence" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                    <EnumerationItem identifier="alt-000-01" value="0" />
+                    <EnumerationItem identifier="alt-000-02" value="1" />
+                    <EnumerationItem identifier="alt-000-05" value="2" />
+                    <EnumerationItem identifier="alt-000-10" value="3" />
+                    <EnumerationItem identifier="alt-000-20" value="4" />
+                    <EnumerationItem identifier="alt-000-50" value="5" />
+                    <EnumerationItem identifier="alt-001-00" value="6" />
+                    <EnumerationItem identifier="alt-002-00" value="7" />
+                    <EnumerationItem identifier="alt-005-00" value="8" />
+                    <EnumerationItem identifier="alt-010-00" value="9" />
+                    <EnumerationItem identifier="alt-020-00" value="10" />
+                    <EnumerationItem identifier="alt-050-00" value="11" />
+                    <EnumerationItem identifier="alt-100-00" value="12" />
+                    <EnumerationItem identifier="alt-200-00" value="13" />
+                    <EnumerationItem identifier="outOfRange" value="14" />
+                    <EnumerationItem identifier="unavailable" value="15" />
+                  </Signal>
+                </Signal>
+              </Signal>
+            </Signal>
+            <Signal name="highFrequencyContainer" type="CHOICE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="basicVehicleContainerHighFrequency" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="heading" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="headingValue" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="3601" size="0">
+                    <NamedValue identifier="wgs84North" value="0" />
+                    <NamedValue identifier="wgs84East" value="900" />
+                    <NamedValue identifier="wgs84South" value="1800" />
+                    <NamedValue identifier="wgs84West" value="2700" />
+                    <NamedValue identifier="unavailable" value="3601" />
+                  </Signal>
+                  <Signal name="headingConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="127" size="1">
+                    <NamedValue identifier="equalOrWithinZeroPointOneDegree" value="1" />
+                    <NamedValue identifier="equalOrWithinOneDegree" value="10" />
+                    <NamedValue identifier="outOfRange" value="126" />
+                    <NamedValue identifier="unavailable" value="127" />
+                  </Signal>
+                </Signal>
+                <Signal name="speed" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="speedValue" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="16383" size="0">
+                    <NamedValue identifier="standstill" value="0" />
+                    <NamedValue identifier="oneCentimeterPerSec" value="1" />
+                    <NamedValue identifier="unavailable" value="16383" />
+                  </Signal>
+                  <Signal name="speedConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="127" size="1">
+                    <NamedValue identifier="equalOrWithinOneCentimeterPerSec" value="1" />
+                    <NamedValue identifier="equalOrWithinOneMeterPerSec" value="100" />
+                    <NamedValue identifier="outOfRange" value="126" />
+                    <NamedValue identifier="unavailable" value="127" />
+                  </Signal>
+                </Signal>
+                <Signal name="driveDirection" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="forward" value="0" />
+                  <EnumerationItem identifier="backward" value="1" />
+                  <EnumerationItem identifier="unavailable" value="2" />
+                </Signal>
+                <Signal name="vehicleLength" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="vehicleLengthValue" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="1023" size="1">
+                    <NamedValue identifier="tenCentimeters" value="1" />
+                    <NamedValue identifier="outOfRange" value="1022" />
+                    <NamedValue identifier="unavailable" value="1023" />
+                  </Signal>
+                  <Signal name="vehicleLengthConfidenceIndication" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                    <EnumerationItem identifier="noTrailerPresent" value="0" />
+                    <EnumerationItem identifier="trailerPresentWithKnownLength" value="1" />
+                    <EnumerationItem identifier="trailerPresentWithUnknownLength" value="2" />
+                    <EnumerationItem identifier="trailerPresenceIsUnknown" value="3" />
+                    <EnumerationItem identifier="unavailable" value="4" />
+                  </Signal>
+                </Signal>
+                <Signal name="vehicleWidth" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="62" size="1">
+                  <NamedValue identifier="tenCentimeters" value="1" />
+                  <NamedValue identifier="outOfRange" value="61" />
+                  <NamedValue identifier="unavailable" value="62" />
+                </Signal>
+                <Signal name="longitudinalAcceleration" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="longitudinalAccelerationValue" type="INTEGER" optional="false" enabled="true" rangeMin="-160" rangeMax="161" size="0">
+                    <NamedValue identifier="pointOneMeterPerSecSquaredBackward" value="-1" />
+                    <NamedValue identifier="pointOneMeterPerSecSquaredForward" value="1" />
+                    <NamedValue identifier="unavailable" value="161" />
+                  </Signal>
+                  <Signal name="longitudinalAccelerationConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="102" size="0">
+                    <NamedValue identifier="pointOneMeterPerSecSquared" value="1" />
+                    <NamedValue identifier="outOfRange" value="101" />
+                    <NamedValue identifier="unavailable" value="102" />
+                  </Signal>
+                </Signal>
+                <Signal name="curvature" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="curvatureValue" type="INTEGER" optional="false" enabled="true" rangeMin="-30000" rangeMax="30001" size="0">
+                    <NamedValue identifier="reciprocalOf1MeterRadiusToRight" value="-30000" />
+                    <NamedValue identifier="straight" value="0" />
+                    <NamedValue identifier="reciprocalOf1MeterRadiusToLeft" value="30000" />
+                    <NamedValue identifier="unavailable" value="30001" />
+                  </Signal>
+                  <Signal name="curvatureConfidence" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                    <EnumerationItem identifier="onePerMeter-0-00002" value="0" />
+                    <EnumerationItem identifier="onePerMeter-0-0001" value="1" />
+                    <EnumerationItem identifier="onePerMeter-0-0005" value="2" />
+                    <EnumerationItem identifier="onePerMeter-0-002" value="3" />
+                    <EnumerationItem identifier="onePerMeter-0-01" value="4" />
+                    <EnumerationItem identifier="onePerMeter-0-1" value="5" />
+                    <EnumerationItem identifier="outOfRange" value="6" />
+                    <EnumerationItem identifier="unavailable" value="7" />
+                  </Signal>
+                </Signal>
+                <Signal name="curvatureCalculationMode" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="yawRateUsed" value="0" />
+                  <EnumerationItem identifier="yawRateNotUsed" value="1" />
+                  <EnumerationItem identifier="unavailable" value="2" />
+                </Signal>
+                <Signal name="yawRate" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="yawRateValue" type="INTEGER" optional="false" enabled="true" rangeMin="-32766" rangeMax="32767" size="0">
+                    <NamedValue identifier="degSec-000-01ToRight" value="-1" />
+                    <NamedValue identifier="straight" value="0" />
+                    <NamedValue identifier="degSec-000-01ToLeft" value="1" />
+                    <NamedValue identifier="unavailable" value="32767" />
+                  </Signal>
+                  <Signal name="yawRateConfidence" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                    <EnumerationItem identifier="degSec-000-01" value="0" />
+                    <EnumerationItem identifier="degSec-000-05" value="1" />
+                    <EnumerationItem identifier="degSec-000-10" value="2" />
+                    <EnumerationItem identifier="degSec-001-00" value="3" />
+                    <EnumerationItem identifier="degSec-005-00" value="4" />
+                    <EnumerationItem identifier="degSec-010-00" value="5" />
+                    <EnumerationItem identifier="degSec-100-00" value="6" />
+                    <EnumerationItem identifier="outOfRange" value="7" />
+                    <EnumerationItem identifier="unavailable" value="8" />
+                  </Signal>
+                </Signal>
+                <Signal name="accelerationControl" type="BIT_STRING" optional="true" enabled="false" rangeMin="7" rangeMax="7" size="7">
+                  <NamedValue identifier="brakePedalEngaged" value="0" />
+                  <NamedValue identifier="gasPedalEngaged" value="1" />
+                  <NamedValue identifier="emergencyBrakeEngaged" value="2" />
+                  <NamedValue identifier="collisionWarningEngaged" value="3" />
+                  <NamedValue identifier="accEngaged" value="4" />
+                  <NamedValue identifier="cruiseControlEngaged" value="5" />
+                  <NamedValue identifier="speedLimiterEngaged" value="6" />
+                </Signal>
+                <Signal name="lanePosition" type="INTEGER" optional="true" enabled="false" rangeMin="-1" rangeMax="14" size="0">
+                  <NamedValue identifier="offTheRoad" value="-1" />
+                  <NamedValue identifier="hardShoulder" value="0" />
+                  <NamedValue identifier="outermostDrivingLane" value="1" />
+                  <NamedValue identifier="secondLaneFromOutside" value="2" />
+                </Signal>
+                <Signal name="steeringWheelAngle" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="steeringWheelAngleValue" type="INTEGER" optional="false" enabled="true" rangeMin="-511" rangeMax="512" size="0">
+                    <NamedValue identifier="onePointFiveDegreesToRight" value="-1" />
+                    <NamedValue identifier="straight" value="0" />
+                    <NamedValue identifier="onePointFiveDegreesToLeft" value="1" />
+                    <NamedValue identifier="unavailable" value="512" />
+                  </Signal>
+                  <Signal name="steeringWheelAngleConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="127" size="1">
+                    <NamedValue identifier="equalOrWithinOnePointFiveDegree" value="1" />
+                    <NamedValue identifier="outOfRange" value="126" />
+                    <NamedValue identifier="unavailable" value="127" />
+                  </Signal>
+                </Signal>
+                <Signal name="lateralAcceleration" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="lateralAccelerationValue" type="INTEGER" optional="false" enabled="true" rangeMin="-160" rangeMax="161" size="0">
+                    <NamedValue identifier="pointOneMeterPerSecSquaredToRight" value="-1" />
+                    <NamedValue identifier="pointOneMeterPerSecSquaredToLeft" value="1" />
+                    <NamedValue identifier="unavailable" value="161" />
+                  </Signal>
+                  <Signal name="lateralAccelerationConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="102" size="0">
+                    <NamedValue identifier="pointOneMeterPerSecSquared" value="1" />
+                    <NamedValue identifier="outOfRange" value="101" />
+                    <NamedValue identifier="unavailable" value="102" />
+                  </Signal>
+                </Signal>
+                <Signal name="verticalAcceleration" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="verticalAccelerationValue" type="INTEGER" optional="false" enabled="true" rangeMin="-160" rangeMax="161" size="0">
+                    <NamedValue identifier="pointOneMeterPerSecSquaredDown" value="-1" />
+                    <NamedValue identifier="pointOneMeterPerSecSquaredUp" value="1" />
+                    <NamedValue identifier="unavailable" value="161" />
+                  </Signal>
+                  <Signal name="verticalAccelerationConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="102" size="0">
+                    <NamedValue identifier="pointOneMeterPerSecSquared" value="1" />
+                    <NamedValue identifier="outOfRange" value="101" />
+                    <NamedValue identifier="unavailable" value="102" />
+                  </Signal>
+                </Signal>
+                <Signal name="performanceClass" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="7" size="0">
+                  <NamedValue identifier="unavailable" value="0" />
+                  <NamedValue identifier="performanceClassA" value="1" />
+                  <NamedValue identifier="performanceClassB" value="2" />
+                </Signal>
+                <Signal name="cenDsrcTollingZone" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="protectedZoneLatitude" type="INTEGER" optional="false" enabled="true" rangeMin="-900000000" rangeMax="900000001" size="0">
+                    <NamedValue identifier="oneMicrodegreeSouth" value="-10" />
+                    <NamedValue identifier="oneMicrodegreeNorth" value="10" />
+                    <NamedValue identifier="unavailable" value="900000001" />
+                  </Signal>
+                  <Signal name="protectedZoneLongitude" type="INTEGER" optional="false" enabled="true" rangeMin="-1800000000" rangeMax="1800000001" size="0">
+                    <NamedValue identifier="oneMicrodegreeWest" value="-10" />
+                    <NamedValue identifier="oneMicrodegreeEast" value="10" />
+                    <NamedValue identifier="unavailable" value="1800000001" />
+                  </Signal>
+                  <Signal name="cenDsrcTollingZoneID" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="134217727" size="0" />
+                </Signal>
+              </Signal>
+              <Signal name="rsuContainerHighFrequency" type="SEQUENCE" optional="false" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="protectedCommunicationZonesRSU" type="SEQUENCE_OF" optional="true" enabled="false" rangeMin="1" rangeMax="16" size="1">
+                  <Signal name="elementType" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                    <Signal name="protectedZoneType" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                      <EnumerationItem identifier="cenDsrcTolling" value="0" />
+                    </Signal>
+                    <Signal name="expiryTime" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="4398046511103" size="0">
+                      <NamedValue identifier="utcStartOf2004" value="0" />
+                      <NamedValue identifier="oneMillisecAfterUTCStartOf2004" value="1" />
+                    </Signal>
+                    <Signal name="protectedZoneLatitude" type="INTEGER" optional="false" enabled="true" rangeMin="-900000000" rangeMax="900000001" size="0">
+                      <NamedValue identifier="oneMicrodegreeSouth" value="-10" />
+                      <NamedValue identifier="oneMicrodegreeNorth" value="10" />
+                      <NamedValue identifier="unavailable" value="900000001" />
+                    </Signal>
+                    <Signal name="protectedZoneLongitude" type="INTEGER" optional="false" enabled="true" rangeMin="-1800000000" rangeMax="1800000001" size="0">
+                      <NamedValue identifier="oneMicrodegreeWest" value="-10" />
+                      <NamedValue identifier="oneMicrodegreeEast" value="10" />
+                      <NamedValue identifier="unavailable" value="1800000001" />
+                    </Signal>
+                    <Signal name="protectedZoneRadius" type="INTEGER" optional="true" enabled="false" rangeMin="1" rangeMax="255" size="1">
+                      <NamedValue identifier="oneMeter" value="1" />
+                    </Signal>
+                    <Signal name="protectedZoneID" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="134217727" size="0" />
+                  </Signal>
+                </Signal>
+              </Signal>
+            </Signal>
+            <Signal name="lowFrequencyContainer" type="CHOICE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="basicVehicleContainerLowFrequency" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="vehicleRole" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="default" value="0" />
+                  <EnumerationItem identifier="publicTransport" value="1" />
+                  <EnumerationItem identifier="specialTransport" value="2" />
+                  <EnumerationItem identifier="dangerousGoods" value="3" />
+                  <EnumerationItem identifier="roadWork" value="4" />
+                  <EnumerationItem identifier="rescue" value="5" />
+                  <EnumerationItem identifier="emergency" value="6" />
+                  <EnumerationItem identifier="safetyCar" value="7" />
+                  <EnumerationItem identifier="agriculture" value="8" />
+                  <EnumerationItem identifier="commercial" value="9" />
+                  <EnumerationItem identifier="military" value="10" />
+                  <EnumerationItem identifier="roadOperator" value="11" />
+                  <EnumerationItem identifier="taxi" value="12" />
+                  <EnumerationItem identifier="reserved1" value="13" />
+                  <EnumerationItem identifier="reserved2" value="14" />
+                  <EnumerationItem identifier="reserved3" value="15" />
+                </Signal>
+                <Signal name="exteriorLights" type="BIT_STRING" optional="false" enabled="true" rangeMin="8" rangeMax="8" size="8">
+                  <NamedValue identifier="lowBeamHeadlightsOn" value="0" />
+                  <NamedValue identifier="highBeamHeadlightsOn" value="1" />
+                  <NamedValue identifier="leftTurnSignalOn" value="2" />
+                  <NamedValue identifier="rightTurnSignalOn" value="3" />
+                  <NamedValue identifier="daytimeRunningLightsOn" value="4" />
+                  <NamedValue identifier="reverseLightOn" value="5" />
+                  <NamedValue identifier="fogLightOn" value="6" />
+                  <NamedValue identifier="parkingLightsOn" value="7" />
+                </Signal>
+                <Signal name="pathHistory" type="SEQUENCE_OF" optional="false" enabled="true" rangeMin="0" rangeMax="40" size="1">
+                  <Signal name="elementType" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                    <Signal name="pathPosition" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                      <Signal name="deltaLatitude" type="INTEGER" optional="false" enabled="true" rangeMin="-131071" rangeMax="131072" size="0">
+                        <NamedValue identifier="oneMicrodegreeSouth" value="-10" />
+                        <NamedValue identifier="oneMicrodegreeNorth" value="10" />
+                        <NamedValue identifier="unavailable" value="131072" />
+                      </Signal>
+                      <Signal name="deltaLongitude" type="INTEGER" optional="false" enabled="true" rangeMin="-131071" rangeMax="131072" size="0">
+                        <NamedValue identifier="oneMicrodegreeWest" value="-10" />
+                        <NamedValue identifier="oneMicrodegreeEast" value="10" />
+                        <NamedValue identifier="unavailable" value="131072" />
+                      </Signal>
+                      <Signal name="deltaAltitude" type="INTEGER" optional="false" enabled="true" rangeMin="-12700" rangeMax="12800" size="0">
+                        <NamedValue identifier="oneCentimeterDown" value="-1" />
+                        <NamedValue identifier="oneCentimeterUp" value="1" />
+                        <NamedValue identifier="unavailable" value="12800" />
+                      </Signal>
+                    </Signal>
+                    <Signal name="pathDeltaTime" type="INTEGER" optional="true" enabled="false" rangeMin="1" rangeMax="65535" size="1">
+                      <NamedValue identifier="tenMilliSecondsInPast" value="1" />
+                    </Signal>
+                  </Signal>
+                </Signal>
+              </Signal>
+            </Signal>
+            <Signal name="specialVehicleContainer" type="CHOICE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="publicTransportContainer" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="embarkationStatus" type="BOOLEAN" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0" />
+                <Signal name="ptActivation" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="ptActivationType" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+                    <NamedValue identifier="undefinedCodingType" value="0" />
+                    <NamedValue identifier="r09-16CodingType" value="1" />
+                    <NamedValue identifier="vdv-50149CodingType" value="2" />
+                  </Signal>
+                  <Signal name="ptActivationData" type="OCTET_STRING" optional="false" enabled="true" rangeMin="1" rangeMax="20" size="1" />
+                </Signal>
+              </Signal>
+              <Signal name="specialTransportContainer" type="SEQUENCE" optional="false" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="specialTransportType" type="BIT_STRING" optional="false" enabled="true" rangeMin="4" rangeMax="4" size="4">
+                  <NamedValue identifier="heavyLoad" value="0" />
+                  <NamedValue identifier="excessWidth" value="1" />
+                  <NamedValue identifier="excessLength" value="2" />
+                  <NamedValue identifier="excessHeight" value="3" />
+                </Signal>
+                <Signal name="lightBarSirenInUse" type="BIT_STRING" optional="false" enabled="true" rangeMin="2" rangeMax="2" size="2">
+                  <NamedValue identifier="lightBarActivated" value="0" />
+                  <NamedValue identifier="sirenActivated" value="1" />
+                </Signal>
+              </Signal>
+              <Signal name="dangerousGoodsContainer" type="SEQUENCE" optional="false" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="dangerousGoodsBasic" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="explosives1" value="0" />
+                  <EnumerationItem identifier="explosives2" value="1" />
+                  <EnumerationItem identifier="explosives3" value="2" />
+                  <EnumerationItem identifier="explosives4" value="3" />
+                  <EnumerationItem identifier="explosives5" value="4" />
+                  <EnumerationItem identifier="explosives6" value="5" />
+                  <EnumerationItem identifier="flammableGases" value="6" />
+                  <EnumerationItem identifier="nonFlammableGases" value="7" />
+                  <EnumerationItem identifier="toxicGases" value="8" />
+                  <EnumerationItem identifier="flammableLiquids" value="9" />
+                  <EnumerationItem identifier="flammableSolids" value="10" />
+                  <EnumerationItem identifier="substancesLiableToSpontaneousCombustion" value="11" />
+                  <EnumerationItem identifier="substancesEmittingFlammableGasesUponContactWithWater" value="12" />
+                  <EnumerationItem identifier="oxidizingSubstances" value="13" />
+                  <EnumerationItem identifier="organicPeroxides" value="14" />
+                  <EnumerationItem identifier="toxicSubstances" value="15" />
+                  <EnumerationItem identifier="infectiousSubstances" value="16" />
+                  <EnumerationItem identifier="radioactiveMaterial" value="17" />
+                  <EnumerationItem identifier="corrosiveSubstances" value="18" />
+                  <EnumerationItem identifier="miscellaneousDangerousSubstances" value="19" />
+                </Signal>
+              </Signal>
+              <Signal name="roadWorksContainerBasic" type="SEQUENCE" optional="false" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="roadworksSubCauseCode" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="255" size="0">
+                  <NamedValue identifier="unavailable" value="0" />
+                  <NamedValue identifier="majorRoadworks" value="1" />
+                  <NamedValue identifier="roadMarkingWork" value="2" />
+                  <NamedValue identifier="slowMovingRoadMaintenance" value="3" />
+                  <NamedValue identifier="shortTermStationaryRoadworks" value="4" />
+                  <NamedValue identifier="streetCleaning" value="5" />
+                  <NamedValue identifier="winterService" value="6" />
+                </Signal>
+                <Signal name="lightBarSirenInUse" type="BIT_STRING" optional="false" enabled="true" rangeMin="2" rangeMax="2" size="2">
+                  <NamedValue identifier="lightBarActivated" value="0" />
+                  <NamedValue identifier="sirenActivated" value="1" />
+                </Signal>
+                <Signal name="closedLanes" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="hardShoulderStatus" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                    <EnumerationItem identifier="availableForStopping" value="0" />
+                    <EnumerationItem identifier="closed" value="1" />
+                    <EnumerationItem identifier="availableForDriving" value="2" />
+                  </Signal>
+                  <Signal name="drivingLaneStatus" type="BIT_STRING" optional="false" enabled="true" rangeMin="1" rangeMax="14" size="1">
+                    <NamedValue identifier="outermostLaneClosed" value="1" />
+                    <NamedValue identifier="secondLaneFromOutsideClosed" value="2" />
+                  </Signal>
+                </Signal>
+              </Signal>
+              <Signal name="rescueContainer" type="SEQUENCE" optional="false" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="lightBarSirenInUse" type="BIT_STRING" optional="false" enabled="true" rangeMin="2" rangeMax="2" size="2">
+                  <NamedValue identifier="lightBarActivated" value="0" />
+                  <NamedValue identifier="sirenActivated" value="1" />
+                </Signal>
+              </Signal>
+              <Signal name="emergencyContainer" type="SEQUENCE" optional="false" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="lightBarSirenInUse" type="BIT_STRING" optional="false" enabled="true" rangeMin="2" rangeMax="2" size="2">
+                  <NamedValue identifier="lightBarActivated" value="0" />
+                  <NamedValue identifier="sirenActivated" value="1" />
+                </Signal>
+                <Signal name="incidentIndication" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="causeCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+                    <NamedValue identifier="reserved" value="0" />
+                    <NamedValue identifier="trafficCondition" value="1" />
+                    <NamedValue identifier="accident" value="2" />
+                    <NamedValue identifier="roadworks" value="3" />
+                    <NamedValue identifier="adverseWeatherCondition-Adhesion" value="6" />
+                    <NamedValue identifier="hazardousLocation-SurfaceCondition" value="9" />
+                    <NamedValue identifier="hazardousLocation-ObstacleOnTheRoad" value="10" />
+                    <NamedValue identifier="hazardousLocation-AnimalOnTheRoad" value="11" />
+                    <NamedValue identifier="humanPresenceOnTheRoad" value="12" />
+                    <NamedValue identifier="wrongWayDriving" value="14" />
+                    <NamedValue identifier="rescueAndRecoveryWorkInProgress" value="15" />
+                    <NamedValue identifier="adverseWeatherCondition-ExtremeWeatherCondition" value="17" />
+                    <NamedValue identifier="adverseWeatherCondition-Visibility" value="18" />
+                    <NamedValue identifier="adverseWeatherCondition-Precipitation" value="19" />
+                    <NamedValue identifier="slowVehicle" value="26" />
+                    <NamedValue identifier="dangerousEndOfQueue" value="27" />
+                    <NamedValue identifier="vehicleBreakdown" value="91" />
+                    <NamedValue identifier="postCrash" value="92" />
+                    <NamedValue identifier="humanProblem" value="93" />
+                    <NamedValue identifier="stationaryVehicle" value="94" />
+                    <NamedValue identifier="emergencyVehicleApproaching" value="95" />
+                    <NamedValue identifier="hazardousLocation-DangerousCurve" value="96" />
+                    <NamedValue identifier="collisionRisk" value="97" />
+                    <NamedValue identifier="signalViolation" value="98" />
+                    <NamedValue identifier="dangerousSituation" value="99" />
+                  </Signal>
+                  <Signal name="subCauseCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0" />
+                </Signal>
+                <Signal name="emergencyPriority" type="BIT_STRING" optional="true" enabled="false" rangeMin="2" rangeMax="2" size="2">
+                  <NamedValue identifier="requestForRightOfWay" value="0" />
+                  <NamedValue identifier="requestForFreeCrossingAtATrafficLight" value="1" />
+                </Signal>
+              </Signal>
+              <Signal name="safetyCarContainer" type="SEQUENCE" optional="false" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="lightBarSirenInUse" type="BIT_STRING" optional="false" enabled="true" rangeMin="2" rangeMax="2" size="2">
+                  <NamedValue identifier="lightBarActivated" value="0" />
+                  <NamedValue identifier="sirenActivated" value="1" />
+                </Signal>
+                <Signal name="incidentIndication" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="causeCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+                    <NamedValue identifier="reserved" value="0" />
+                    <NamedValue identifier="trafficCondition" value="1" />
+                    <NamedValue identifier="accident" value="2" />
+                    <NamedValue identifier="roadworks" value="3" />
+                    <NamedValue identifier="adverseWeatherCondition-Adhesion" value="6" />
+                    <NamedValue identifier="hazardousLocation-SurfaceCondition" value="9" />
+                    <NamedValue identifier="hazardousLocation-ObstacleOnTheRoad" value="10" />
+                    <NamedValue identifier="hazardousLocation-AnimalOnTheRoad" value="11" />
+                    <NamedValue identifier="humanPresenceOnTheRoad" value="12" />
+                    <NamedValue identifier="wrongWayDriving" value="14" />
+                    <NamedValue identifier="rescueAndRecoveryWorkInProgress" value="15" />
+                    <NamedValue identifier="adverseWeatherCondition-ExtremeWeatherCondition" value="17" />
+                    <NamedValue identifier="adverseWeatherCondition-Visibility" value="18" />
+                    <NamedValue identifier="adverseWeatherCondition-Precipitation" value="19" />
+                    <NamedValue identifier="slowVehicle" value="26" />
+                    <NamedValue identifier="dangerousEndOfQueue" value="27" />
+                    <NamedValue identifier="vehicleBreakdown" value="91" />
+                    <NamedValue identifier="postCrash" value="92" />
+                    <NamedValue identifier="humanProblem" value="93" />
+                    <NamedValue identifier="stationaryVehicle" value="94" />
+                    <NamedValue identifier="emergencyVehicleApproaching" value="95" />
+                    <NamedValue identifier="hazardousLocation-DangerousCurve" value="96" />
+                    <NamedValue identifier="collisionRisk" value="97" />
+                    <NamedValue identifier="signalViolation" value="98" />
+                    <NamedValue identifier="dangerousSituation" value="99" />
+                  </Signal>
+                  <Signal name="subCauseCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0" />
+                </Signal>
+                <Signal name="trafficRule" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="noPassing" value="0" />
+                  <EnumerationItem identifier="noPassingForTrucks" value="1" />
+                  <EnumerationItem identifier="passToRight" value="2" />
+                  <EnumerationItem identifier="passToLeft" value="3" />
+                </Signal>
+                <Signal name="speedLimit" type="INTEGER" optional="true" enabled="false" rangeMin="1" rangeMax="255" size="1">
+                  <NamedValue identifier="oneKmPerHour" value="1" />
+                </Signal>
+              </Signal>
+            </Signal>
+          </Signal>
+        </Signal>
+      </Signal>
+    </RootMessage>
+    <RootMessage messageType="DENM" version="1" enabled="false" uniqueID="3">
+      <Signal name="DENM" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+        <Signal name="header" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+          <Signal name="protocolVersion" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+            <NamedValue identifier="currentVersion" value="1" />
+          </Signal>
+          <Signal name="messageID" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+            <NamedValue identifier="denm" value="1" />
+            <NamedValue identifier="cam" value="2" />
+            <NamedValue identifier="poi" value="3" />
+            <NamedValue identifier="spat" value="4" />
+            <NamedValue identifier="map" value="5" />
+            <NamedValue identifier="ivi" value="6" />
+            <NamedValue identifier="ev-rsr" value="7" />
+          </Signal>
+          <Signal name="stationID" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4294967295" size="0" />
+        </Signal>
+        <Signal name="denm" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+          <Signal name="management" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="actionID" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="originatingStationID" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4294967295" size="0" />
+              <Signal name="sequenceNumber" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="65535" size="0" />
+            </Signal>
+            <Signal name="detectionTime" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4398046511103" size="0">
+              <NamedValue identifier="utcStartOf2004" value="0" />
+              <NamedValue identifier="oneMillisecAfterUTCStartOf2004" value="1" />
+            </Signal>
+            <Signal name="referenceTime" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4398046511103" size="0">
+              <NamedValue identifier="utcStartOf2004" value="0" />
+              <NamedValue identifier="oneMillisecAfterUTCStartOf2004" value="1" />
+            </Signal>
+            <Signal name="termination" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="isCancellation" value="0" />
+              <EnumerationItem identifier="isNegation" value="1" />
+            </Signal>
+            <Signal name="eventPosition" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="latitude" type="INTEGER" optional="false" enabled="true" rangeMin="-900000000" rangeMax="900000001" size="0">
+                <NamedValue identifier="oneMicrodegreeSouth" value="-10" />
+                <NamedValue identifier="oneMicrodegreeNorth" value="10" />
+                <NamedValue identifier="unavailable" value="900000001" />
+              </Signal>
+              <Signal name="longitude" type="INTEGER" optional="false" enabled="true" rangeMin="-1800000000" rangeMax="1800000001" size="0">
+                <NamedValue identifier="oneMicrodegreeWest" value="-10" />
+                <NamedValue identifier="oneMicrodegreeEast" value="10" />
+                <NamedValue identifier="unavailable" value="1800000001" />
+              </Signal>
+              <Signal name="positionConfidenceEllipse" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="semiMajorConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4095" size="0">
+                  <NamedValue identifier="oneCentimeter" value="1" />
+                  <NamedValue identifier="outOfRange" value="4094" />
+                  <NamedValue identifier="unavailable" value="4095" />
+                </Signal>
+                <Signal name="semiMinorConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4095" size="0">
+                  <NamedValue identifier="oneCentimeter" value="1" />
+                  <NamedValue identifier="outOfRange" value="4094" />
+                  <NamedValue identifier="unavailable" value="4095" />
+                </Signal>
+                <Signal name="semiMajorOrientation" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="3601" size="0">
+                  <NamedValue identifier="wgs84North" value="0" />
+                  <NamedValue identifier="wgs84East" value="900" />
+                  <NamedValue identifier="wgs84South" value="1800" />
+                  <NamedValue identifier="wgs84West" value="2700" />
+                  <NamedValue identifier="unavailable" value="3601" />
+                </Signal>
+              </Signal>
+              <Signal name="altitude" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="altitudeValue" type="INTEGER" optional="false" enabled="true" rangeMin="-100000" rangeMax="800001" size="0">
+                  <NamedValue identifier="referenceEllipsoidSurface" value="0" />
+                  <NamedValue identifier="oneCentimeter" value="1" />
+                  <NamedValue identifier="unavailable" value="800001" />
+                </Signal>
+                <Signal name="altitudeConfidence" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="alt-000-01" value="0" />
+                  <EnumerationItem identifier="alt-000-02" value="1" />
+                  <EnumerationItem identifier="alt-000-05" value="2" />
+                  <EnumerationItem identifier="alt-000-10" value="3" />
+                  <EnumerationItem identifier="alt-000-20" value="4" />
+                  <EnumerationItem identifier="alt-000-50" value="5" />
+                  <EnumerationItem identifier="alt-001-00" value="6" />
+                  <EnumerationItem identifier="alt-002-00" value="7" />
+                  <EnumerationItem identifier="alt-005-00" value="8" />
+                  <EnumerationItem identifier="alt-010-00" value="9" />
+                  <EnumerationItem identifier="alt-020-00" value="10" />
+                  <EnumerationItem identifier="alt-050-00" value="11" />
+                  <EnumerationItem identifier="alt-100-00" value="12" />
+                  <EnumerationItem identifier="alt-200-00" value="13" />
+                  <EnumerationItem identifier="outOfRange" value="14" />
+                  <EnumerationItem identifier="unavailable" value="15" />
+                </Signal>
+              </Signal>
+            </Signal>
+            <Signal name="relevanceDistance" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="lessThan50m" value="0" />
+              <EnumerationItem identifier="lessThan100m" value="1" />
+              <EnumerationItem identifier="lessThan200m" value="2" />
+              <EnumerationItem identifier="lessThan500m" value="3" />
+              <EnumerationItem identifier="lessThan1000m" value="4" />
+              <EnumerationItem identifier="lessThan5km" value="5" />
+              <EnumerationItem identifier="lessThan10km" value="6" />
+              <EnumerationItem identifier="over10km" value="7" />
+            </Signal>
+            <Signal name="relevanceTrafficDirection" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="allTrafficDirections" value="0" />
+              <EnumerationItem identifier="upstreamTraffic" value="1" />
+              <EnumerationItem identifier="downstreamTraffic" value="2" />
+              <EnumerationItem identifier="oppositeTraffic" value="3" />
+            </Signal>
+            <Signal name="validityDuration" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="86400" size="0">
+              <NamedValue identifier="timeOfDetection" value="0" />
+              <NamedValue identifier="oneSecondAfterDetection" value="1" />
+            </Signal>
+            <Signal name="transmissionInterval" type="INTEGER" optional="true" enabled="false" rangeMin="1" rangeMax="10000" size="1">
+              <NamedValue identifier="oneMilliSecond" value="1" />
+              <NamedValue identifier="tenSeconds" value="10000" />
+            </Signal>
+            <Signal name="stationType" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+              <NamedValue identifier="unknown" value="0" />
+              <NamedValue identifier="pedestrian" value="1" />
+              <NamedValue identifier="cyclist" value="2" />
+              <NamedValue identifier="moped" value="3" />
+              <NamedValue identifier="motorcycle" value="4" />
+              <NamedValue identifier="passengerCar" value="5" />
+              <NamedValue identifier="bus" value="6" />
+              <NamedValue identifier="lightTruck" value="7" />
+              <NamedValue identifier="heavyTruck" value="8" />
+              <NamedValue identifier="trailer" value="9" />
+              <NamedValue identifier="specialVehicles" value="10" />
+              <NamedValue identifier="tram" value="11" />
+              <NamedValue identifier="roadSideUnit" value="15" />
+            </Signal>
+          </Signal>
+          <Signal name="situation" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="informationQuality" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="7" size="0">
+              <NamedValue identifier="unavailable" value="0" />
+              <NamedValue identifier="lowest" value="1" />
+              <NamedValue identifier="highest" value="7" />
+            </Signal>
+            <Signal name="eventType" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="causeCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+                <NamedValue identifier="reserved" value="0" />
+                <NamedValue identifier="trafficCondition" value="1" />
+                <NamedValue identifier="accident" value="2" />
+                <NamedValue identifier="roadworks" value="3" />
+                <NamedValue identifier="adverseWeatherCondition-Adhesion" value="6" />
+                <NamedValue identifier="hazardousLocation-SurfaceCondition" value="9" />
+                <NamedValue identifier="hazardousLocation-ObstacleOnTheRoad" value="10" />
+                <NamedValue identifier="hazardousLocation-AnimalOnTheRoad" value="11" />
+                <NamedValue identifier="humanPresenceOnTheRoad" value="12" />
+                <NamedValue identifier="wrongWayDriving" value="14" />
+                <NamedValue identifier="rescueAndRecoveryWorkInProgress" value="15" />
+                <NamedValue identifier="adverseWeatherCondition-ExtremeWeatherCondition" value="17" />
+                <NamedValue identifier="adverseWeatherCondition-Visibility" value="18" />
+                <NamedValue identifier="adverseWeatherCondition-Precipitation" value="19" />
+                <NamedValue identifier="slowVehicle" value="26" />
+                <NamedValue identifier="dangerousEndOfQueue" value="27" />
+                <NamedValue identifier="vehicleBreakdown" value="91" />
+                <NamedValue identifier="postCrash" value="92" />
+                <NamedValue identifier="humanProblem" value="93" />
+                <NamedValue identifier="stationaryVehicle" value="94" />
+                <NamedValue identifier="emergencyVehicleApproaching" value="95" />
+                <NamedValue identifier="hazardousLocation-DangerousCurve" value="96" />
+                <NamedValue identifier="collisionRisk" value="97" />
+                <NamedValue identifier="signalViolation" value="98" />
+                <NamedValue identifier="dangerousSituation" value="99" />
+              </Signal>
+              <Signal name="subCauseCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0" />
+            </Signal>
+            <Signal name="linkedCause" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="causeCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+                <NamedValue identifier="reserved" value="0" />
+                <NamedValue identifier="trafficCondition" value="1" />
+                <NamedValue identifier="accident" value="2" />
+                <NamedValue identifier="roadworks" value="3" />
+                <NamedValue identifier="adverseWeatherCondition-Adhesion" value="6" />
+                <NamedValue identifier="hazardousLocation-SurfaceCondition" value="9" />
+                <NamedValue identifier="hazardousLocation-ObstacleOnTheRoad" value="10" />
+                <NamedValue identifier="hazardousLocation-AnimalOnTheRoad" value="11" />
+                <NamedValue identifier="humanPresenceOnTheRoad" value="12" />
+                <NamedValue identifier="wrongWayDriving" value="14" />
+                <NamedValue identifier="rescueAndRecoveryWorkInProgress" value="15" />
+                <NamedValue identifier="adverseWeatherCondition-ExtremeWeatherCondition" value="17" />
+                <NamedValue identifier="adverseWeatherCondition-Visibility" value="18" />
+                <NamedValue identifier="adverseWeatherCondition-Precipitation" value="19" />
+                <NamedValue identifier="slowVehicle" value="26" />
+                <NamedValue identifier="dangerousEndOfQueue" value="27" />
+                <NamedValue identifier="vehicleBreakdown" value="91" />
+                <NamedValue identifier="postCrash" value="92" />
+                <NamedValue identifier="humanProblem" value="93" />
+                <NamedValue identifier="stationaryVehicle" value="94" />
+                <NamedValue identifier="emergencyVehicleApproaching" value="95" />
+                <NamedValue identifier="hazardousLocation-DangerousCurve" value="96" />
+                <NamedValue identifier="collisionRisk" value="97" />
+                <NamedValue identifier="signalViolation" value="98" />
+                <NamedValue identifier="dangerousSituation" value="99" />
+              </Signal>
+              <Signal name="subCauseCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0" />
+            </Signal>
+            <Signal name="eventHistory" type="SEQUENCE_OF" optional="true" enabled="false" rangeMin="1" rangeMax="23" size="1">
+              <Signal name="elementType" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="eventPosition" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="deltaLatitude" type="INTEGER" optional="false" enabled="true" rangeMin="-131071" rangeMax="131072" size="0">
+                    <NamedValue identifier="oneMicrodegreeSouth" value="-10" />
+                    <NamedValue identifier="oneMicrodegreeNorth" value="10" />
+                    <NamedValue identifier="unavailable" value="131072" />
+                  </Signal>
+                  <Signal name="deltaLongitude" type="INTEGER" optional="false" enabled="true" rangeMin="-131071" rangeMax="131072" size="0">
+                    <NamedValue identifier="oneMicrodegreeWest" value="-10" />
+                    <NamedValue identifier="oneMicrodegreeEast" value="10" />
+                    <NamedValue identifier="unavailable" value="131072" />
+                  </Signal>
+                  <Signal name="deltaAltitude" type="INTEGER" optional="false" enabled="true" rangeMin="-12700" rangeMax="12800" size="0">
+                    <NamedValue identifier="oneCentimeterDown" value="-1" />
+                    <NamedValue identifier="oneCentimeterUp" value="1" />
+                    <NamedValue identifier="unavailable" value="12800" />
+                  </Signal>
+                </Signal>
+                <Signal name="eventDeltaTime" type="INTEGER" optional="true" enabled="false" rangeMin="1" rangeMax="65535" size="1">
+                  <NamedValue identifier="tenMilliSecondsInPast" value="1" />
+                </Signal>
+                <Signal name="informationQuality" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="7" size="0">
+                  <NamedValue identifier="unavailable" value="0" />
+                  <NamedValue identifier="lowest" value="1" />
+                  <NamedValue identifier="highest" value="7" />
+                </Signal>
+              </Signal>
+            </Signal>
+          </Signal>
+          <Signal name="location" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="eventSpeed" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="speedValue" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="16383" size="0">
+                <NamedValue identifier="standstill" value="0" />
+                <NamedValue identifier="oneCentimeterPerSec" value="1" />
+                <NamedValue identifier="unavailable" value="16383" />
+              </Signal>
+              <Signal name="speedConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="127" size="1">
+                <NamedValue identifier="equalOrWithinOneCentimeterPerSec" value="1" />
+                <NamedValue identifier="equalOrWithinOneMeterPerSec" value="100" />
+                <NamedValue identifier="outOfRange" value="126" />
+                <NamedValue identifier="unavailable" value="127" />
+              </Signal>
+            </Signal>
+            <Signal name="eventPositionHeading" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="headingValue" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="3601" size="0">
+                <NamedValue identifier="wgs84North" value="0" />
+                <NamedValue identifier="wgs84East" value="900" />
+                <NamedValue identifier="wgs84South" value="1800" />
+                <NamedValue identifier="wgs84West" value="2700" />
+                <NamedValue identifier="unavailable" value="3601" />
+              </Signal>
+              <Signal name="headingConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="127" size="1">
+                <NamedValue identifier="equalOrWithinZeroPointOneDegree" value="1" />
+                <NamedValue identifier="equalOrWithinOneDegree" value="10" />
+                <NamedValue identifier="outOfRange" value="126" />
+                <NamedValue identifier="unavailable" value="127" />
+              </Signal>
+            </Signal>
+            <Signal name="traces" type="SEQUENCE_OF" optional="false" enabled="true" rangeMin="1" rangeMax="7" size="1">
+              <Signal name="elementType" type="SEQUENCE_OF" optional="false" enabled="true" rangeMin="0" rangeMax="40" size="1">
+                <Signal name="elementType" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="pathPosition" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                    <Signal name="deltaLatitude" type="INTEGER" optional="false" enabled="true" rangeMin="-131071" rangeMax="131072" size="0">
+                      <NamedValue identifier="oneMicrodegreeSouth" value="-10" />
+                      <NamedValue identifier="oneMicrodegreeNorth" value="10" />
+                      <NamedValue identifier="unavailable" value="131072" />
+                    </Signal>
+                    <Signal name="deltaLongitude" type="INTEGER" optional="false" enabled="true" rangeMin="-131071" rangeMax="131072" size="0">
+                      <NamedValue identifier="oneMicrodegreeWest" value="-10" />
+                      <NamedValue identifier="oneMicrodegreeEast" value="10" />
+                      <NamedValue identifier="unavailable" value="131072" />
+                    </Signal>
+                    <Signal name="deltaAltitude" type="INTEGER" optional="false" enabled="true" rangeMin="-12700" rangeMax="12800" size="0">
+                      <NamedValue identifier="oneCentimeterDown" value="-1" />
+                      <NamedValue identifier="oneCentimeterUp" value="1" />
+                      <NamedValue identifier="unavailable" value="12800" />
+                    </Signal>
+                  </Signal>
+                  <Signal name="pathDeltaTime" type="INTEGER" optional="true" enabled="false" rangeMin="1" rangeMax="65535" size="1">
+                    <NamedValue identifier="tenMilliSecondsInPast" value="1" />
+                  </Signal>
+                </Signal>
+              </Signal>
+            </Signal>
+            <Signal name="roadType" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="urban-NoStructuralSeparationToOppositeLanes" value="0" />
+              <EnumerationItem identifier="urban-WithStructuralSeparationToOppositeLanes" value="1" />
+              <EnumerationItem identifier="nonUrban-NoStructuralSeparationToOppositeLanes" value="2" />
+              <EnumerationItem identifier="nonUrban-WithStructuralSeparationToOppositeLanes" value="3" />
+            </Signal>
+          </Signal>
+          <Signal name="alacarte" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+            <Signal name="lanePosition" type="INTEGER" optional="true" enabled="false" rangeMin="-1" rangeMax="14" size="0">
+              <NamedValue identifier="offTheRoad" value="-1" />
+              <NamedValue identifier="hardShoulder" value="0" />
+              <NamedValue identifier="outermostDrivingLane" value="1" />
+              <NamedValue identifier="secondLaneFromOutside" value="2" />
+            </Signal>
+            <Signal name="impactReduction" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="heightLonCarrLeft" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="100" size="1">
+                <NamedValue identifier="oneCentimeter" value="1" />
+                <NamedValue identifier="unavailable" value="100" />
+              </Signal>
+              <Signal name="heightLonCarrRight" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="100" size="1">
+                <NamedValue identifier="oneCentimeter" value="1" />
+                <NamedValue identifier="unavailable" value="100" />
+              </Signal>
+              <Signal name="posLonCarrLeft" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="127" size="1">
+                <NamedValue identifier="oneCentimeter" value="1" />
+                <NamedValue identifier="unavailable" value="127" />
+              </Signal>
+              <Signal name="posLonCarrRight" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="127" size="1">
+                <NamedValue identifier="oneCentimeter" value="1" />
+                <NamedValue identifier="unavailable" value="127" />
+              </Signal>
+              <Signal name="positionOfPillars" type="SEQUENCE_OF" optional="false" enabled="true" rangeMin="1" rangeMax="3" size="1">
+                <Signal name="elementType" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="30" size="1">
+                  <NamedValue identifier="tenCentimeters" value="1" />
+                  <NamedValue identifier="unavailable" value="30" />
+                </Signal>
+              </Signal>
+              <Signal name="posCentMass" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="63" size="1">
+                <NamedValue identifier="tenCentimeters" value="1" />
+                <NamedValue identifier="unavailable" value="63" />
+              </Signal>
+              <Signal name="wheelBaseVehicle" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="127" size="1">
+                <NamedValue identifier="tenCentimeters" value="1" />
+                <NamedValue identifier="unavailable" value="127" />
+              </Signal>
+              <Signal name="turningRadius" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="255" size="1">
+                <NamedValue identifier="point4Meters" value="1" />
+                <NamedValue identifier="unavailable" value="255" />
+              </Signal>
+              <Signal name="posFrontAx" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="20" size="1">
+                <NamedValue identifier="tenCentimeters" value="1" />
+                <NamedValue identifier="unavailable" value="20" />
+              </Signal>
+              <Signal name="positionOfOccupants" type="BIT_STRING" optional="false" enabled="true" rangeMin="20" rangeMax="20" size="20">
+                <NamedValue identifier="row1LeftOccupied" value="0" />
+                <NamedValue identifier="row1RightOccupied" value="1" />
+                <NamedValue identifier="row1MidOccupied" value="2" />
+                <NamedValue identifier="row1NotDetectable" value="3" />
+                <NamedValue identifier="row1NotPresent" value="4" />
+                <NamedValue identifier="row2LeftOccupied" value="5" />
+                <NamedValue identifier="row2RightOccupied" value="6" />
+                <NamedValue identifier="row2MidOccupied" value="7" />
+                <NamedValue identifier="row2NotDetectable" value="8" />
+                <NamedValue identifier="row2NotPresent" value="9" />
+                <NamedValue identifier="row3LeftOccupied" value="10" />
+                <NamedValue identifier="row3RightOccupied" value="11" />
+                <NamedValue identifier="row3MidOccupied" value="12" />
+                <NamedValue identifier="row3NotDetectable" value="13" />
+                <NamedValue identifier="row3NotPresent" value="14" />
+                <NamedValue identifier="row4LeftOccupied" value="15" />
+                <NamedValue identifier="row4RightOccupied" value="16" />
+                <NamedValue identifier="row4MidOccupied" value="17" />
+                <NamedValue identifier="row4NotDetectable" value="18" />
+                <NamedValue identifier="row4NotPresent" value="19" />
+              </Signal>
+              <Signal name="vehicleMass" type="INTEGER" optional="false" enabled="true" rangeMin="1" rangeMax="1024" size="1">
+                <NamedValue identifier="hundredKg" value="1" />
+                <NamedValue identifier="unavailable" value="1024" />
+              </Signal>
+              <Signal name="requestResponseIndication" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="request" value="0" />
+                <EnumerationItem identifier="response" value="1" />
+              </Signal>
+            </Signal>
+            <Signal name="externalTemperature" type="INTEGER" optional="true" enabled="false" rangeMin="-60" rangeMax="67" size="0">
+              <NamedValue identifier="equalOrSmallerThanMinus60Deg" value="-60" />
+              <NamedValue identifier="oneDegreeCelsius" value="1" />
+              <NamedValue identifier="equalOrGreaterThan67Deg" value="67" />
+            </Signal>
+            <Signal name="roadWorks" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="lightBarSirenInUse" type="BIT_STRING" optional="true" enabled="false" rangeMin="2" rangeMax="2" size="2">
+                <NamedValue identifier="lightBarActivated" value="0" />
+                <NamedValue identifier="sirenActivated" value="1" />
+              </Signal>
+              <Signal name="closedLanes" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="hardShoulderStatus" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="availableForStopping" value="0" />
+                  <EnumerationItem identifier="closed" value="1" />
+                  <EnumerationItem identifier="availableForDriving" value="2" />
+                </Signal>
+                <Signal name="drivingLaneStatus" type="BIT_STRING" optional="false" enabled="true" rangeMin="1" rangeMax="14" size="1">
+                  <NamedValue identifier="outermostLaneClosed" value="1" />
+                  <NamedValue identifier="secondLaneFromOutsideClosed" value="2" />
+                </Signal>
+              </Signal>
+              <Signal name="restriction" type="SEQUENCE_OF" optional="true" enabled="false" rangeMin="1" rangeMax="3" size="1">
+                <Signal name="elementType" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+                  <NamedValue identifier="unknown" value="0" />
+                  <NamedValue identifier="pedestrian" value="1" />
+                  <NamedValue identifier="cyclist" value="2" />
+                  <NamedValue identifier="moped" value="3" />
+                  <NamedValue identifier="motorcycle" value="4" />
+                  <NamedValue identifier="passengerCar" value="5" />
+                  <NamedValue identifier="bus" value="6" />
+                  <NamedValue identifier="lightTruck" value="7" />
+                  <NamedValue identifier="heavyTruck" value="8" />
+                  <NamedValue identifier="trailer" value="9" />
+                  <NamedValue identifier="specialVehicles" value="10" />
+                  <NamedValue identifier="tram" value="11" />
+                  <NamedValue identifier="roadSideUnit" value="15" />
+                </Signal>
+              </Signal>
+              <Signal name="speedLimit" type="INTEGER" optional="true" enabled="false" rangeMin="1" rangeMax="255" size="1">
+                <NamedValue identifier="oneKmPerHour" value="1" />
+              </Signal>
+              <Signal name="incidentIndication" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="causeCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+                  <NamedValue identifier="reserved" value="0" />
+                  <NamedValue identifier="trafficCondition" value="1" />
+                  <NamedValue identifier="accident" value="2" />
+                  <NamedValue identifier="roadworks" value="3" />
+                  <NamedValue identifier="adverseWeatherCondition-Adhesion" value="6" />
+                  <NamedValue identifier="hazardousLocation-SurfaceCondition" value="9" />
+                  <NamedValue identifier="hazardousLocation-ObstacleOnTheRoad" value="10" />
+                  <NamedValue identifier="hazardousLocation-AnimalOnTheRoad" value="11" />
+                  <NamedValue identifier="humanPresenceOnTheRoad" value="12" />
+                  <NamedValue identifier="wrongWayDriving" value="14" />
+                  <NamedValue identifier="rescueAndRecoveryWorkInProgress" value="15" />
+                  <NamedValue identifier="adverseWeatherCondition-ExtremeWeatherCondition" value="17" />
+                  <NamedValue identifier="adverseWeatherCondition-Visibility" value="18" />
+                  <NamedValue identifier="adverseWeatherCondition-Precipitation" value="19" />
+                  <NamedValue identifier="slowVehicle" value="26" />
+                  <NamedValue identifier="dangerousEndOfQueue" value="27" />
+                  <NamedValue identifier="vehicleBreakdown" value="91" />
+                  <NamedValue identifier="postCrash" value="92" />
+                  <NamedValue identifier="humanProblem" value="93" />
+                  <NamedValue identifier="stationaryVehicle" value="94" />
+                  <NamedValue identifier="emergencyVehicleApproaching" value="95" />
+                  <NamedValue identifier="hazardousLocation-DangerousCurve" value="96" />
+                  <NamedValue identifier="collisionRisk" value="97" />
+                  <NamedValue identifier="signalViolation" value="98" />
+                  <NamedValue identifier="dangerousSituation" value="99" />
+                </Signal>
+                <Signal name="subCauseCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0" />
+              </Signal>
+              <Signal name="recommendedPath" type="SEQUENCE_OF" optional="true" enabled="false" rangeMin="1" rangeMax="40" size="1">
+                <Signal name="elementType" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="latitude" type="INTEGER" optional="false" enabled="true" rangeMin="-900000000" rangeMax="900000001" size="0">
+                    <NamedValue identifier="oneMicrodegreeSouth" value="-10" />
+                    <NamedValue identifier="oneMicrodegreeNorth" value="10" />
+                    <NamedValue identifier="unavailable" value="900000001" />
+                  </Signal>
+                  <Signal name="longitude" type="INTEGER" optional="false" enabled="true" rangeMin="-1800000000" rangeMax="1800000001" size="0">
+                    <NamedValue identifier="oneMicrodegreeWest" value="-10" />
+                    <NamedValue identifier="oneMicrodegreeEast" value="10" />
+                    <NamedValue identifier="unavailable" value="1800000001" />
+                  </Signal>
+                  <Signal name="positionConfidenceEllipse" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                    <Signal name="semiMajorConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4095" size="0">
+                      <NamedValue identifier="oneCentimeter" value="1" />
+                      <NamedValue identifier="outOfRange" value="4094" />
+                      <NamedValue identifier="unavailable" value="4095" />
+                    </Signal>
+                    <Signal name="semiMinorConfidence" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4095" size="0">
+                      <NamedValue identifier="oneCentimeter" value="1" />
+                      <NamedValue identifier="outOfRange" value="4094" />
+                      <NamedValue identifier="unavailable" value="4095" />
+                    </Signal>
+                    <Signal name="semiMajorOrientation" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="3601" size="0">
+                      <NamedValue identifier="wgs84North" value="0" />
+                      <NamedValue identifier="wgs84East" value="900" />
+                      <NamedValue identifier="wgs84South" value="1800" />
+                      <NamedValue identifier="wgs84West" value="2700" />
+                      <NamedValue identifier="unavailable" value="3601" />
+                    </Signal>
+                  </Signal>
+                  <Signal name="altitude" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                    <Signal name="altitudeValue" type="INTEGER" optional="false" enabled="true" rangeMin="-100000" rangeMax="800001" size="0">
+                      <NamedValue identifier="referenceEllipsoidSurface" value="0" />
+                      <NamedValue identifier="oneCentimeter" value="1" />
+                      <NamedValue identifier="unavailable" value="800001" />
+                    </Signal>
+                    <Signal name="altitudeConfidence" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                      <EnumerationItem identifier="alt-000-01" value="0" />
+                      <EnumerationItem identifier="alt-000-02" value="1" />
+                      <EnumerationItem identifier="alt-000-05" value="2" />
+                      <EnumerationItem identifier="alt-000-10" value="3" />
+                      <EnumerationItem identifier="alt-000-20" value="4" />
+                      <EnumerationItem identifier="alt-000-50" value="5" />
+                      <EnumerationItem identifier="alt-001-00" value="6" />
+                      <EnumerationItem identifier="alt-002-00" value="7" />
+                      <EnumerationItem identifier="alt-005-00" value="8" />
+                      <EnumerationItem identifier="alt-010-00" value="9" />
+                      <EnumerationItem identifier="alt-020-00" value="10" />
+                      <EnumerationItem identifier="alt-050-00" value="11" />
+                      <EnumerationItem identifier="alt-100-00" value="12" />
+                      <EnumerationItem identifier="alt-200-00" value="13" />
+                      <EnumerationItem identifier="outOfRange" value="14" />
+                      <EnumerationItem identifier="unavailable" value="15" />
+                    </Signal>
+                  </Signal>
+                </Signal>
+              </Signal>
+              <Signal name="startingPointSpeedLimit" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="deltaLatitude" type="INTEGER" optional="false" enabled="true" rangeMin="-131071" rangeMax="131072" size="0">
+                  <NamedValue identifier="oneMicrodegreeSouth" value="-10" />
+                  <NamedValue identifier="oneMicrodegreeNorth" value="10" />
+                  <NamedValue identifier="unavailable" value="131072" />
+                </Signal>
+                <Signal name="deltaLongitude" type="INTEGER" optional="false" enabled="true" rangeMin="-131071" rangeMax="131072" size="0">
+                  <NamedValue identifier="oneMicrodegreeWest" value="-10" />
+                  <NamedValue identifier="oneMicrodegreeEast" value="10" />
+                  <NamedValue identifier="unavailable" value="131072" />
+                </Signal>
+                <Signal name="deltaAltitude" type="INTEGER" optional="false" enabled="true" rangeMin="-12700" rangeMax="12800" size="0">
+                  <NamedValue identifier="oneCentimeterDown" value="-1" />
+                  <NamedValue identifier="oneCentimeterUp" value="1" />
+                  <NamedValue identifier="unavailable" value="12800" />
+                </Signal>
+              </Signal>
+              <Signal name="trafficFlowRule" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="noPassing" value="0" />
+                <EnumerationItem identifier="noPassingForTrucks" value="1" />
+                <EnumerationItem identifier="passToRight" value="2" />
+                <EnumerationItem identifier="passToLeft" value="3" />
+              </Signal>
+              <Signal name="referenceDenms" type="SEQUENCE_OF" optional="true" enabled="false" rangeMin="1" rangeMax="8" size="1">
+                <Signal name="elementType" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <Signal name="originatingStationID" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="4294967295" size="0" />
+                  <Signal name="sequenceNumber" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="65535" size="0" />
+                </Signal>
+              </Signal>
+            </Signal>
+            <Signal name="positioningSolution" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <EnumerationItem identifier="noPositioningSolution" value="0" />
+              <EnumerationItem identifier="sGNSS" value="1" />
+              <EnumerationItem identifier="dGNSS" value="2" />
+              <EnumerationItem identifier="sGNSSplusDR" value="3" />
+              <EnumerationItem identifier="dGNSSplusDR" value="4" />
+              <EnumerationItem identifier="dR" value="5" />
+            </Signal>
+            <Signal name="stationaryVehicle" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+              <Signal name="stationarySince" type="ENUMERATED" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <EnumerationItem identifier="lessThan1Minute" value="0" />
+                <EnumerationItem identifier="lessThan2Minutes" value="1" />
+                <EnumerationItem identifier="lessThan15Minutes" value="2" />
+                <EnumerationItem identifier="equalOrGreater15Minutes" value="3" />
+              </Signal>
+              <Signal name="stationaryCause" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="causeCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0">
+                  <NamedValue identifier="reserved" value="0" />
+                  <NamedValue identifier="trafficCondition" value="1" />
+                  <NamedValue identifier="accident" value="2" />
+                  <NamedValue identifier="roadworks" value="3" />
+                  <NamedValue identifier="adverseWeatherCondition-Adhesion" value="6" />
+                  <NamedValue identifier="hazardousLocation-SurfaceCondition" value="9" />
+                  <NamedValue identifier="hazardousLocation-ObstacleOnTheRoad" value="10" />
+                  <NamedValue identifier="hazardousLocation-AnimalOnTheRoad" value="11" />
+                  <NamedValue identifier="humanPresenceOnTheRoad" value="12" />
+                  <NamedValue identifier="wrongWayDriving" value="14" />
+                  <NamedValue identifier="rescueAndRecoveryWorkInProgress" value="15" />
+                  <NamedValue identifier="adverseWeatherCondition-ExtremeWeatherCondition" value="17" />
+                  <NamedValue identifier="adverseWeatherCondition-Visibility" value="18" />
+                  <NamedValue identifier="adverseWeatherCondition-Precipitation" value="19" />
+                  <NamedValue identifier="slowVehicle" value="26" />
+                  <NamedValue identifier="dangerousEndOfQueue" value="27" />
+                  <NamedValue identifier="vehicleBreakdown" value="91" />
+                  <NamedValue identifier="postCrash" value="92" />
+                  <NamedValue identifier="humanProblem" value="93" />
+                  <NamedValue identifier="stationaryVehicle" value="94" />
+                  <NamedValue identifier="emergencyVehicleApproaching" value="95" />
+                  <NamedValue identifier="hazardousLocation-DangerousCurve" value="96" />
+                  <NamedValue identifier="collisionRisk" value="97" />
+                  <NamedValue identifier="signalViolation" value="98" />
+                  <NamedValue identifier="dangerousSituation" value="99" />
+                </Signal>
+                <Signal name="subCauseCode" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="255" size="0" />
+              </Signal>
+              <Signal name="carryingDangerousGoods" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="dangerousGoodsType" type="ENUMERATED" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+                  <EnumerationItem identifier="explosives1" value="0" />
+                  <EnumerationItem identifier="explosives2" value="1" />
+                  <EnumerationItem identifier="explosives3" value="2" />
+                  <EnumerationItem identifier="explosives4" value="3" />
+                  <EnumerationItem identifier="explosives5" value="4" />
+                  <EnumerationItem identifier="explosives6" value="5" />
+                  <EnumerationItem identifier="flammableGases" value="6" />
+                  <EnumerationItem identifier="nonFlammableGases" value="7" />
+                  <EnumerationItem identifier="toxicGases" value="8" />
+                  <EnumerationItem identifier="flammableLiquids" value="9" />
+                  <EnumerationItem identifier="flammableSolids" value="10" />
+                  <EnumerationItem identifier="substancesLiableToSpontaneousCombustion" value="11" />
+                  <EnumerationItem identifier="substancesEmittingFlammableGasesUponContactWithWater" value="12" />
+                  <EnumerationItem identifier="oxidizingSubstances" value="13" />
+                  <EnumerationItem identifier="organicPeroxides" value="14" />
+                  <EnumerationItem identifier="toxicSubstances" value="15" />
+                  <EnumerationItem identifier="infectiousSubstances" value="16" />
+                  <EnumerationItem identifier="radioactiveMaterial" value="17" />
+                  <EnumerationItem identifier="corrosiveSubstances" value="18" />
+                  <EnumerationItem identifier="miscellaneousDangerousSubstances" value="19" />
+                </Signal>
+                <Signal name="unNumber" type="INTEGER" optional="false" enabled="true" rangeMin="0" rangeMax="9999" size="0" />
+                <Signal name="elevatedTemperature" type="BOOLEAN" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0" />
+                <Signal name="tunnelsRestricted" type="BOOLEAN" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0" />
+                <Signal name="limitedQuantity" type="BOOLEAN" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0" />
+                <Signal name="emergencyActionCode" type="IA5String" optional="true" enabled="false" rangeMin="1" rangeMax="24" size="1" />
+                <Signal name="phoneNumber" type="IA5String" optional="true" enabled="false" rangeMin="1" rangeMax="24" size="1" />
+                <Signal name="companyName" type="UTF8String" optional="true" enabled="false" rangeMin="1" rangeMax="24" size="1" />
+              </Signal>
+              <Signal name="numberOfOccupants" type="INTEGER" optional="true" enabled="false" rangeMin="0" rangeMax="127" size="0">
+                <NamedValue identifier="oneOccupant" value="1" />
+                <NamedValue identifier="unavailable" value="127" />
+              </Signal>
+              <Signal name="vehicleIdentification" type="SEQUENCE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0">
+                <Signal name="wMInumber" type="IA5String" optional="true" enabled="false" rangeMin="1" rangeMax="3" size="1" />
+                <Signal name="vDS" type="IA5String" optional="true" enabled="false" rangeMin="6" rangeMax="6" size="6" />
+              </Signal>
+              <Signal name="energyStorageType" type="BIT_STRING" optional="true" enabled="false" rangeMin="7" rangeMax="7" size="7">
+                <NamedValue identifier="hydrogenStorage" value="0" />
+                <NamedValue identifier="electricEnergyStorage" value="1" />
+                <NamedValue identifier="liquidPropaneGas" value="2" />
+                <NamedValue identifier="compressedNaturalGas" value="3" />
+                <NamedValue identifier="diesel" value="4" />
+                <NamedValue identifier="gasoline" value="5" />
+                <NamedValue identifier="ammonia" value="6" />
+              </Signal>
+            </Signal>
+          </Signal>
+        </Signal>
+      </Signal>
+    </RootMessage>
+    <RootMessage messageType="Generic" version="1" enabled="false" uniqueID="4">
+      <Signal name="Generic" type="SEQUENCE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0">
+        <Signal name="messageID" type="INTEGER" optional="false" enabled="true" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="senderID" type="INTEGER" optional="false" enabled="true" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="signal_1" type="DOUBLE" optional="false" enabled="true" rangeMin="0" rangeMax="0" size="0" />
+        <Signal name="signal_2" type="DOUBLE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0" />
+        <Signal name="signal_3" type="DOUBLE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0" />
+        <Signal name="signal_4" type="DOUBLE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0" />
+        <Signal name="signal_5" type="DOUBLE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0" />
+        <Signal name="signal_6" type="DOUBLE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0" />
+        <Signal name="signal_7" type="DOUBLE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0" />
+        <Signal name="signal_8" type="DOUBLE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0" />
+        <Signal name="signal_9" type="DOUBLE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0" />
+        <Signal name="signal_10" type="DOUBLE" optional="true" enabled="false" rangeMin="0" rangeMax="0" size="0" />
+        <Signal name="discrete_signal_1" type="INTEGER" optional="true" enabled="false" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="discrete_signal_2" type="INTEGER" optional="true" enabled="false" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="discrete_signal_3" type="INTEGER" optional="true" enabled="false" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="discrete_signal_4" type="INTEGER" optional="true" enabled="false" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="discrete_signal_5" type="INTEGER" optional="true" enabled="false" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="discrete_signal_6" type="INTEGER" optional="true" enabled="false" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="discrete_signal_7" type="INTEGER" optional="true" enabled="false" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="discrete_signal_8" type="INTEGER" optional="true" enabled="false" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="discrete_signal_9" type="INTEGER" optional="true" enabled="false" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+        <Signal name="discrete_signal_10" type="INTEGER" optional="true" enabled="false" rangeMin="-2147483648" rangeMax="2147483647" size="0" />
+      </Signal>
+    </RootMessage>
+  </RootMessages>
+</V2XConfiguration>

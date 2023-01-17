@@ -1,0 +1,2 @@
+result = load_experiment(r"C:/software\Documents\Experiments\testEmplanner", r"testEmplanner", r"f89ac7c5-5ac3-40cd-a13e-d432479052f6")
+vismanager.setFrameDuration(0.05)

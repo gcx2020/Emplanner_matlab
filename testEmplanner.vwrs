@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <ViewerSettings>
 	<Viewers>
-		<Viewer1 camera="HumanView_2"/>
+		<Viewer1 camera="Top View"/>
 		<Viewer2 camera="Top View"/>
 		<Viewer3 camera="North Direction"/>
 		<Viewer4 camera="East Direction"/>

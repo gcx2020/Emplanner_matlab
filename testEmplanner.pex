@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Experiment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Description="" id="testEmplanner" UniqueId="0" TotalSimulationTime="290.40000000000003" Built="true" EnableCollisionDetection="false" MaxNumberOfCollisions="5" EnableTestAutomation="false" Generate3DTrajectories="false" VisualizeSensorBeams="false" VisualizeBoundingBoxes="false" Parsed="true" PrecipitationRandomSeed="0" PRESCANVersion="8.5.0" ResourcesDir="Resources" SensorRandomSeed="0" SimulationGenerationHash="1A94C042FC0667096F715AF93B8BD397C3B3898CE8FEAC8E895BD2CC784EC36D" UniqueExperimentIdentifier="630cfa3f-87cb-41bd-9cb5-003bcbea373c" UniqueIdCounter="222" VisuAidMaxRenderingDistance="750" VisuAidMinRenderingDistance="0.1" WeatherTypeName="None">
+<Experiment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Description="" id="testEmplanner" UniqueId="0" TotalSimulationTime="290.40000000000003" Built="true" EnableCollisionDetection="false" MaxNumberOfCollisions="5" EnableTestAutomation="false" Generate3DTrajectories="false" VisualizeSensorBeams="false" VisualizeBoundingBoxes="false" Parsed="true" PrecipitationRandomSeed="0" PRESCANVersion="8.5.0" ResourcesDir="Resources" SensorRandomSeed="0" SimulationGenerationHash="65DB19D58B0F8EF4D14189A4066B8CF5BC9817C88893A023D9A8C43611ABF165" UniqueExperimentIdentifier="af941cbf-2e25-45e7-a4f9-125349d16165" UniqueIdCounter="319" VisuAidMaxRenderingDistance="750" VisuAidMinRenderingDistance="0.1" WeatherTypeName="None">
   <Actors>
     <Actor xsi:type="GenericModel" Description="A model of an Audi A8 Sedan" id="Audi_A8_Sedan_1" UniqueId="15" SensorIDDetection="true" NumericalID="3" ObjectTypeID="1" ParticipateInCollisionDetection="false" DynamicsConfiguration="UserSpecified" DiscreteModeActivated="false" Reference="false" UserSpecifiedControl="false" JavaClass="" PhysicsSimpleDynamicsInteraction="PhysicsInheritsFromSD" ActorKind="Audi_A8_Sedan" AnimatedActor="false" CompilationSheetPicture="Audi_A8_HighPoly.png" HashCode="d771622804618130053427da08a6d484" ModelFile="Vehicles\Audi_A8\Audi_A8.osgb" GenericModelSourceFile="Vehicles\Audi_A8\Audi_A8.pgmb" FileLocationType="ModelDepo" SupportedDynamics="None Simple SimpleTD UserSpecified">
-      <Location X="0" Y="14.68" Z="0.550000011920929" />
+      <Location X="6" Y="18" Z="0" />
       <Orientation Bank="0" Tilt="0" Heading="0" />
       <Origin X="0.25" Y="0.5" Z="0" />
       <Size X="5.2100000381469727" Y="2.0399999618530273" Z="1.440000057220459" />
@@ -336,7 +336,22 @@
         <SpecifiedDynamics SourceModelFile="..\DynamicCarSim\Extensions\Simulink\CarSim_VehicleDynamics.mdl" SourceModelType="" />
       </Dynamics>
       <Physics Drag="0.27000001072883606" Mass="1820" MaxAcceleration="0.30000001192092896" MaxDeceleration="1" ReferenceArea="2.332564115524292" RollFriction="0.0099999997764825821" />
-      <Sensors />
+      <Sensors>
+        <Sensor xsi:type="AIRSensor" Description="" id="AIR_1" UniqueId="258" PreventDragging="true" CurrentAttachmentPoint="Actor" Visualize="false" VisualizedAlpha="25" BeamColor="Green (FF008000)" FovAzimuth="360" FovElevation="360" EntitiesOut="32" DetectionType="Center" BeamLength="60">
+          <Location X="3.94000005722046" Y="0" Z="0.370000004768372" />
+          <Orientation Bank="0" Tilt="0" Heading="0" />
+          <Origin X="0" Y="1" Z="0" />
+          <Size X="4.2608499526977539" Y="1.6562497615814209" Z="0.10000000149011612" />
+          <CoGOffset X="0" Y="0" Z="0" />
+          <TestAutomationVariables>
+            <TestAutomationVariable VariableName="Location" VariableState="false" />
+            <TestAutomationVariable VariableName="Orientation" VariableState="false" />
+            <TestAutomationVariable VariableName="Range" VariableState="false" />
+            <TestAutomationVariable VariableName="SweepAngle" VariableState="false" />
+            <TestAutomationVariable VariableName="DetectionType" VariableState="false" />
+          </TestAutomationVariables>
+        </Sensor>
+      </Sensors>
       <ConnectionPoints>
         <ConnectionPoint>
           <Name>Towbar</Name>
@@ -353,8 +368,8 @@
           <CoGOffset X="0" Y="0" Z="0" />
           <Position>DriverRight</Position>
         </Camera>
-        <Camera xsi:type="HumanView" Description="" id="HumanView_2" UniqueId="17" PreventDragging="true" CurrentAttachmentPoint="Actor" NearDistance="0.1" FarDistance="750" HorizontalAngle="120" VerticalAngle="90" BeamColor="Blue (FF0000FF)" OutputCameraImage="false">
-          <Location X="-4" Y="0" Z="3" />
+        <Camera xsi:type="HumanView" Description="" id="HumanView_2" UniqueId="317" PreventDragging="true" CurrentAttachmentPoint="Actor" NearDistance="0.1" FarDistance="750" HorizontalAngle="120" VerticalAngle="90" BeamColor="Blue (FF0000FF)" OutputCameraImage="false">
+          <Location X="1.5" Y="0" Z="1.10000002384186" />
           <Orientation Bank="0" Tilt="0" Heading="0" />
           <Origin X="0.5" Y="0.5" Z="0" />
           <Size X="0.19999999999999996" Y="0.30000000000000004" Z="0" />
@@ -2531,6 +2546,35 @@
       </WheelDefinitions>
       <VehicleGeometry TrackWidthFront="1.6119999885559082" TrackWidthRear="1.6119999885559082" TyreRadius="0.34000000357627869" Wheelbase="2.940000057220459" />
     </Actor>
+    <Actor xsi:type="Box" Description="" id="Box_1" UniqueId="262" SensorIDDetection="true" NumericalID="8" ObjectTypeID="5" ParticipateInCollisionDetection="false" DynamicsConfiguration="None" DiscreteModeActivated="false" Reference="false" UserSpecifiedControl="false" JavaClass="" GhostColor="64646464" Color="IndianRed (FFCD5C5C)" BoxHeight="1" BoxLength="1" BoxWidth="1">
+      <Location X="76.267982482910156" Y="15.250494956970215" Z="0.5" />
+      <Orientation Bank="0" Tilt="0" Heading="0" />
+      <Origin X="0.5" Y="0.5" Z="0.5" />
+      <Size X="1" Y="1" Z="1" />
+      <CoGOffset X="0" Y="0" Z="0" />
+      <SensorInfo>
+        <TISSensorInfo DefaultORMFile="dfltORM_CalElement.txt">
+          <UserSpecifiedModels />
+        </TISSensorInfo>
+      </SensorInfo>
+      <ObjectSimulatorInfo RealObjectShape="BLOCKSHAPE" StateActuator="true" SelfSensor="true" AlwaysOnCompilationSheet="false">
+        <VisualizationActuators>
+          <VisualizationActuator ActuatorName="VisuGhostColor" EnableActuator="false" ShowInAnimationList="true">
+            <LightMeshPositions />
+            <VisuPortElements />
+          </VisualizationActuator>
+        </VisualizationActuators>
+      </ObjectSimulatorInfo>
+      <DriverModel DriverModelType="None">
+        <PathFollowerSettings WithPreview="true" PreviewTime="1" DelayTime="0.1" LowSpeedLimit="20" MaxSteeringRate="1200" FrequencyFactor="1" />
+        <GameControllerSettings EnableForceFeedback="true" GameControllerType="LogitechG29" ShiftStrategyType="Automatic" />
+      </DriverModel>
+      <Physics Drag="0.1" Mass="90" MaxAcceleration="0.3" MaxDeceleration="1" ReferenceArea="0.7" RollFriction="0.01" />
+      <Sensors />
+      <ConnectionPoints />
+      <Trajectories />
+      <Cameras />
+    </Actor>
   </Actors>
   <VehicleTypeSpecificDatas />
   <CompilationSheetInfo Description="" id="CompilationSheetInfo" UniqueId="1" InterpretedSimulink="testEmplanner" />
@@ -2908,7 +2952,9 @@
       <CategorizedObjects />
     </UserObjectType>
     <UserObjectType xsi:type="PredefinedSemanticCategory" Name="CalibrationElement" Color="FFFFFF00" PredefinedEnumType="CalibrationElement">
-      <CategorizedObjects />
+      <CategorizedObjects>
+        <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_1" UniqueId="262" />
+      </CategorizedObjects>
     </UserObjectType>
     <UserObjectType xsi:type="PredefinedSemanticCategory" Name="Trailer" Color="FFFF00FF" PredefinedEnumType="Trailer">
       <CategorizedObjects />
@@ -3009,6 +3055,9 @@
     </ObjectColorID>
     <ObjectColorID Color="FF00007F">
       <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Audi_A8_Sedan_2" UniqueId="85" />
+    </ObjectColorID>
+    <ObjectColorID Color="FF00FF00">
+      <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_1" UniqueId="262" />
     </ObjectColorID>
   </ObjectColorIDs>
   <PreScanObjectTypeSettings Description="" id="PreScanObjectTypeSettings" UniqueId="9">
@@ -3315,6 +3364,16 @@
         </Slot>
       </Slots>
       <StartState Distance="0" Situation="Reached" Speed="10" Time="0" />
+    </SpeedProfileBase>
+    <SpeedProfileBase xsi:type="SpeedProfile" Description="" id="SpeedProfile_2" UniqueId="260">
+      <Physics Drag="0.1" Mass="90" MaxAcceleration="0.3" MaxDeceleration="1" ReferenceArea="0.7" RollFriction="0.01" />
+      <PhysicsEnvironment AirDensity="1.28" Gravitation="9.81" AirTemperature="293.15" AtmPressure="101.325" AirHumidityPercentage="10" />
+      <Slots>
+        <Slot xsi:type="UserDefinedSlot" EndStateChange="false" ID="Slot2" CalculationType1="Speed" CalculationType2="EndOfSegmentID" CalculationValue1="1" CalculationValue2="3">
+          <StartState Distance="0" Situation="Reached" Speed="1" Time="0" />
+        </Slot>
+      </Slots>
+      <StartState Distance="0" Situation="Reached" Speed="1" Time="0" />
     </SpeedProfileBase>
   </SpeedProfiles>
   <Terrain Description="Terrain" id="Terrain" UniqueId="8" TerrainColor="FF0080FF" TerrainTexture="Air_terrain.png" UseTerrain="true" ObjectTypeID="51" NumericalID="2">

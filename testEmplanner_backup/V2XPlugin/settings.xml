@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<SettingsType xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <scenario Id="1">
+    <Name>Intersection Category 1</Name>
+    <Path>1_IxCat1</Path>
+    <Description>Obstructing building between the two vehicles on collision course. 
+	Without any large surfaces available for reflections from the transmitter vehicle to the receiver vehicle.</Description>
+  </scenario>
+  <packetSize>200</packetSize>
+  <randomSeed>1</randomSeed>
+  <nonDetSeed>false</nonDetSeed>
+</SettingsType>

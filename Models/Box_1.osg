@@ -1,0 +1,87 @@
+MatrixTransform {
+	DataVariance STATIC
+	name "Box_1"
+	nodeMask 0xff
+	cullingActive TRUE
+	StateSet {
+		UniqueID StateSet_0
+		DataVariance STATIC
+		rendering_hint DEFAULT_BIN
+		renderBinMode INHERIT
+		GL_LIGHTING ON
+	}
+	referenceFrame RELATIVE
+	Matrix {
+		1 0 0 0
+		0 1 0 0
+		0 0 1 0
+		0 0 0 1
+	}
+	num_children 1
+	Group {
+		DataVariance STATIC
+		name "Body"
+		nodeMask 0xef
+		cullingActive TRUE
+		num_children 1
+		MatrixTransform {
+			DataVariance STATIC
+			name "CoGoff"
+			nodeMask 0xff
+			cullingActive TRUE
+			num_children 1
+			Geode {
+				DataVariance STATIC
+				nodeMask 0xffffffff
+				cullingActive TRUE
+				num_drawables 1
+				ShapeDrawable {
+					DataVariance DYNAMIC
+					StateSet {
+						DataVariance STATIC
+						rendering_hint DEFAULT_BIN
+						renderBinMode INHERIT
+						GL_CULL_FACE OFF
+						GL_LIGHTING ON
+						Material {
+							DataVariance STATIC
+							ColorMode OFF
+							ambientColor 0.588235 0.588235 0.588235 1
+							diffuseColor 1 1 1 1
+							specularColor 0 0 0 1
+							emissionColor 0 0 0 1
+							shininess 0
+						}
+						textureUnit 0 {
+							GL_TEXTURE_2D ON
+							Texture2D {
+								DataVariance DYNAMIC
+								file "cd5c5c_2x2.png"
+								wrap_s REPEAT
+								wrap_t REPEAT
+								wrap_r CLAMP
+								min_filter LINEAR_MIPMAP_LINEAR
+								mag_filter LINEAR
+								maxAnisotropy 1
+								borderColor 0 0 0 0
+								borderWidth 0
+								useHardwareMipMapGeneration TRUE
+								unRefImageDataAfterApply FALSE
+								internalFormatMode USE_IMAGE_DATA_FORMAT
+								resizeNonPowerOfTwo TRUE
+							}
+						}
+					}
+					Box {
+						DataVariance DYNAMIC
+						Center 0 0 0
+						HalfLengths 0.5 0.5 0.5
+						Rotation 0 0 0 1
+					}
+					useDisplayList TRUE
+					useVertexBufferObjects FALSE					
+				}
+			}
+		}
+	}
+}
