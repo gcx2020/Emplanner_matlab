@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Experiment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Description="" id="testEmplanner" UniqueId="0" TotalSimulationTime="290.40000000000003" Built="true" EnableCollisionDetection="false" MaxNumberOfCollisions="5" EnableTestAutomation="false" Generate3DTrajectories="false" VisualizeSensorBeams="false" VisualizeBoundingBoxes="false" Parsed="true" PrecipitationRandomSeed="0" PRESCANVersion="8.5.0" ResourcesDir="Resources" SensorRandomSeed="0" SimulationGenerationHash="65DB19D58B0F8EF4D14189A4066B8CF5BC9817C88893A023D9A8C43611ABF165" UniqueExperimentIdentifier="af941cbf-2e25-45e7-a4f9-125349d16165" UniqueIdCounter="319" VisuAidMaxRenderingDistance="750" VisuAidMinRenderingDistance="0.1" WeatherTypeName="None">
+<Experiment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Description="" id="testEmplanner" UniqueId="0" TotalSimulationTime="290.40000000000003" Built="true" EnableCollisionDetection="false" MaxNumberOfCollisions="5" EnableTestAutomation="false" Generate3DTrajectories="false" VisualizeSensorBeams="false" VisualizeBoundingBoxes="false" Parsed="true" PrecipitationRandomSeed="0" PRESCANVersion="8.5.0" ResourcesDir="Resources" SensorRandomSeed="0" SimulationGenerationHash="98053006B52278D60D16D979E319CE8BBF13DC5D5233F65F251D71C8E866C87A" UniqueExperimentIdentifier="5a5ef8af-1577-411e-a36b-14d1d9e65da6" UniqueIdCounter="373" VisuAidMaxRenderingDistance="750" VisuAidMinRenderingDistance="0.1" WeatherTypeName="None">
   <Actors>
     <Actor xsi:type="GenericModel" Description="A model of an Audi A8 Sedan" id="Audi_A8_Sedan_1" UniqueId="15" SensorIDDetection="true" NumericalID="3" ObjectTypeID="1" ParticipateInCollisionDetection="false" DynamicsConfiguration="UserSpecified" DiscreteModeActivated="false" Reference="false" UserSpecifiedControl="false" JavaClass="" PhysicsSimpleDynamicsInteraction="PhysicsInheritsFromSD" ActorKind="Audi_A8_Sedan" AnimatedActor="false" CompilationSheetPicture="Audi_A8_HighPoly.png" HashCode="d771622804618130053427da08a6d484" ModelFile="Vehicles\Audi_A8\Audi_A8.osgb" GenericModelSourceFile="Vehicles\Audi_A8\Audi_A8.pgmb" FileLocationType="ModelDepo" SupportedDynamics="None Simple SimpleTD UserSpecified">
-      <Location X="6" Y="18" Z="0" />
+      <Location X="5" Y="18" Z="0" />
       <Orientation Bank="0" Tilt="0" Heading="0" />
       <Origin X="0.25" Y="0.5" Z="0" />
       <Size X="5.2100000381469727" Y="2.0399999618530273" Z="1.440000057220459" />
@@ -361,7 +361,7 @@
       <Trajectories />
       <Cameras>
         <Camera xsi:type="HumanView" Description="" id="HumanView_1" UniqueId="16" PreventDragging="true" CurrentAttachmentPoint="Actor" NearDistance="0.1" FarDistance="750" HorizontalAngle="120" VerticalAngle="90" BeamColor="Blue (FF0000FF)" OutputCameraImage="false">
-          <Location X="1.5" Y="-0.40999999642372131" Z="1.1000000238418579" />
+          <Location X="-2" Y="0" Z="2" />
           <Orientation Bank="0" Tilt="0" Heading="0" />
           <Origin X="0.5" Y="0.5" Z="0" />
           <Size X="0.19999999999999996" Y="0.30000000000000004" Z="0" />
