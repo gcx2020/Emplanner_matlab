@@ -1,0 +1,4 @@
+result = load_experiment(r"C:/software\Documents\Experiments\testEmplanner", r"testEmplanner", r"5a5ef8af-1577-411e-a36b-14d1d9e65da6")
+vismanager.setFrameDuration(0.05)
+scene.Audi_A8_Sedan_1.setTranslation(3.22548, 18, -0.517327);scene.Audi_A8_Sedan_1.setRotation(0.00832769, 0, 1, 0);scene.Audi_A8_Sedan_2.setTranslation(-2.9148, 14.6488, -1.19209e-08);scene.Audi_A8_Sedan_2.setRotation(0, 0, 0, 1);scene.Box_1.setTranslation(76.268, 15.2505, 0.5);scene.Box_1.setRotation(0, 0, 0, 1);vismanager.viewerBeat()
+scene.Audi_A8_Sedan_1.setTranslation(3.22665, 17.9999, -0.517482);scene.Audi_A8_Sedan_1.setRotation(0.00804708, -0.00744873, 0.999964, -0.00411268);scene.Audi_A8_Sedan_2.setTranslation(-2.41498, 14.6488, 7.45292e-05);scene.Audi_A8_Sedan_2.setRotation(4.227e-05, -1.35964e-15, 1, -6.80226e-16);vismanager.viewerBeat()
