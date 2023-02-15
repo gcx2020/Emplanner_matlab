@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Experiment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Description="" id="testEmplanner" UniqueId="0" TotalSimulationTime="290.40000000000003" Built="true" EnableCollisionDetection="false" MaxNumberOfCollisions="5" EnableTestAutomation="false" Generate3DTrajectories="false" VisualizeSensorBeams="false" VisualizeBoundingBoxes="false" Parsed="true" PrecipitationRandomSeed="0" PRESCANVersion="8.5.0" ResourcesDir="Resources" SensorRandomSeed="0" SimulationGenerationHash="2B21946EEFB75EF63A50D3E913C04D788BF931FB122E6DF673DC7F473502EB2C" UniqueExperimentIdentifier="94e71ef2-8a2f-462c-ad57-5852c6d68856" UniqueIdCounter="538" VisuAidMaxRenderingDistance="750" VisuAidMinRenderingDistance="0.1" WeatherTypeName="None">
+<Experiment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Description="" id="testEmplanner" UniqueId="0" TotalSimulationTime="290.40000000000003" Built="true" EnableCollisionDetection="false" MaxNumberOfCollisions="5" EnableTestAutomation="false" Generate3DTrajectories="false" VisualizeSensorBeams="false" VisualizeBoundingBoxes="false" Parsed="true" PrecipitationRandomSeed="0" PRESCANVersion="8.5.0" ResourcesDir="Resources" SensorRandomSeed="0" SimulationGenerationHash="2B21946EEFB75EF63A50D3E913C04D788BF931FB122E6DF673DC7F473502EB2C" UniqueExperimentIdentifier="94e71ef2-8a2f-462c-ad57-5852c6d68856" UniqueIdCounter="556" VisuAidMaxRenderingDistance="750" VisuAidMinRenderingDistance="0.1" WeatherTypeName="None">
   <Actors>
     <Actor xsi:type="GenericModel" Description="A model of an Audi A8 Sedan" id="Audi_A8_Sedan_1" UniqueId="15" SensorIDDetection="true" NumericalID="3" ObjectTypeID="1" ParticipateInCollisionDetection="false" DynamicsConfiguration="UserSpecified" DiscreteModeActivated="false" Reference="false" UserSpecifiedControl="false" JavaClass="" PhysicsSimpleDynamicsInteraction="PhysicsInheritsFromSD" ActorKind="Audi_A8_Sedan" AnimatedActor="false" CompilationSheetPicture="Audi_A8_HighPoly.png" HashCode="d771622804618130053427da08a6d484" ModelFile="Vehicles\Audi_A8\Audi_A8.osgb" GenericModelSourceFile="Vehicles\Audi_A8\Audi_A8.pgmb" FileLocationType="ModelDepo" SupportedDynamics="None Simple SimpleTD UserSpecified">
       <Location X="5" Y="18" Z="0" />
@@ -3017,13 +3017,13 @@
           <AbsoluteLocation X="-1.0567483901977541" Y="14.64875602722168" Z="0" />
         </SelectionPointBase>
         <SelectionPointBase xsi:type="SelectionPoint" NumberSegments="1" Lane="2" RoadSegmentId="BendRoad_1" CrossSectionIndex="0">
-          <AbsoluteLocation X="298.85523128509521" Y="14.64875602722168" Z="0" />
+          <AbsoluteLocation X="298.94325160980225" Y="14.64875602722168" Z="0" />
         </SelectionPointBase>
         <SelectionPointBase xsi:type="SelectionPoint" NumberSegments="1" Lane="2" RoadSegmentId="BendRoad_2" CrossSectionIndex="0">
-          <AbsoluteLocation X="-102.89476871490479" Y="416.39875602722174" Z="0" />
+          <AbsoluteLocation X="-102.80674839019775" Y="416.39875602722174" Z="0" />
         </SelectionPointBase>
         <SelectionPointBase xsi:type="SelectionPoint" NumberSegments="1" Lane="1" RoadSegmentId="BendRoad_2" CrossSectionIndex="1">
-          <AbsoluteLocation X="412.22470250813592" Y="203.02928480418092" Z="0" />
+          <AbsoluteLocation X="412.31272283284295" Y="203.02928480418092" Z="0" />
         </SelectionPointBase>
       </SelectionPoints>
       <SubStatePath>AddSegment</SubStatePath>
