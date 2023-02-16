@@ -140,13 +140,6 @@ mat = visnodes.VisMaterial("mat");mat.setColors(1, 1, 1, 0, 1, 1, 1, 0, 0.4, 0.4
 mat = visnodes.VisMaterial("mat");mat.setColors(1, 0, 0, 1, 1, 0, 0, 1, 0.4, 0.4, 0.4, 0.4, 0, 0, 0, 1);mat.applyComponents(scene.Audi_A8_Sedan_2.MainLightRL, mat.ALL_RGB, True,True)
 mat = visnodes.VisMaterial("mat");mat.setColors(1, 0, 0, 1, 1, 0, 0, 1, 0.4, 0.4, 0.4, 0.4, 0, 0, 0, 1);mat.applyComponents(scene.Audi_A8_Sedan_2.MainLightRR, mat.ALL_RGB, True,True)
 
-Box_1 = visnodes.VisTransform.load( r"Box_1", r"Box_1.osg", True )
-Box_1.setNodeMask(0xFFFFFFFF, True)
-Box_1.setNodeMaskOnGeodes(70016)
-scene.addChild(Box_1)
-scene.Box_1.setTranslation(76.267982482910156, 15.250494956970215, 0.5)
-scene.Box_1.setRotation(0, 1, 0, 0)
-
 Box_2 = visnodes.VisTransform.load( r"Box_2", r"Box_2.osg", True )
 Box_2.setNodeMask(0xFFFFFFFF, True)
 Box_2.setNodeMaskOnGeodes(70016)

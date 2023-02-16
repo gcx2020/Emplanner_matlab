@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Experiment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Description="" id="testEmplanner" UniqueId="0" TotalSimulationTime="290.40000000000003" Built="true" EnableCollisionDetection="false" MaxNumberOfCollisions="5" EnableTestAutomation="false" Generate3DTrajectories="false" VisualizeSensorBeams="false" VisualizeBoundingBoxes="false" Parsed="true" PrecipitationRandomSeed="0" PRESCANVersion="8.5.0" ResourcesDir="Resources" SensorRandomSeed="0" SimulationGenerationHash="2B21946EEFB75EF63A50D3E913C04D788BF931FB122E6DF673DC7F473502EB2C" UniqueExperimentIdentifier="94e71ef2-8a2f-462c-ad57-5852c6d68856" UniqueIdCounter="556" VisuAidMaxRenderingDistance="750" VisuAidMinRenderingDistance="0.1" WeatherTypeName="None">
+<Experiment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Description="" id="testEmplanner" UniqueId="0" TotalSimulationTime="290.40000000000003" Built="true" EnableCollisionDetection="false" MaxNumberOfCollisions="5" EnableTestAutomation="false" Generate3DTrajectories="false" VisualizeSensorBeams="false" VisualizeBoundingBoxes="false" Parsed="true" PrecipitationRandomSeed="0" PRESCANVersion="8.5.0" ResourcesDir="Resources" SensorRandomSeed="0" SimulationGenerationHash="9936B9DD0F60611E1BED86BD0E9268C29BC57E8C80F221D857C49665FACE46FC" UniqueExperimentIdentifier="51d10f7a-826f-4070-a45e-7406aaa1b269" UniqueIdCounter="556" VisuAidMaxRenderingDistance="750" VisuAidMinRenderingDistance="0.1" WeatherTypeName="None">
   <Actors>
     <Actor xsi:type="GenericModel" Description="A model of an Audi A8 Sedan" id="Audi_A8_Sedan_1" UniqueId="15" SensorIDDetection="true" NumericalID="3" ObjectTypeID="1" ParticipateInCollisionDetection="false" DynamicsConfiguration="UserSpecified" DiscreteModeActivated="false" Reference="false" UserSpecifiedControl="false" JavaClass="" PhysicsSimpleDynamicsInteraction="PhysicsInheritsFromSD" ActorKind="Audi_A8_Sedan" AnimatedActor="false" CompilationSheetPicture="Audi_A8_HighPoly.png" HashCode="d771622804618130053427da08a6d484" ModelFile="Vehicles\Audi_A8\Audi_A8.osgb" GenericModelSourceFile="Vehicles\Audi_A8\Audi_A8.pgmb" FileLocationType="ModelDepo" SupportedDynamics="None Simple SimpleTD UserSpecified">
       <Location X="5" Y="18" Z="0" />
@@ -2546,35 +2546,6 @@
       </WheelDefinitions>
       <VehicleGeometry TrackWidthFront="1.6119999885559082" TrackWidthRear="1.6119999885559082" TyreRadius="0.34000000357627869" Wheelbase="2.940000057220459" />
     </Actor>
-    <Actor xsi:type="Box" Description="" id="Box_1" UniqueId="262" SensorIDDetection="true" NumericalID="8" ObjectTypeID="5" ParticipateInCollisionDetection="false" DynamicsConfiguration="None" DiscreteModeActivated="false" Reference="false" UserSpecifiedControl="false" JavaClass="" GhostColor="64646464" Color="IndianRed (FFCD5C5C)" BoxHeight="1" BoxLength="1" BoxWidth="1">
-      <Location X="76.267982482910156" Y="15.250494956970215" Z="0.5" />
-      <Orientation Bank="0" Tilt="0" Heading="0" />
-      <Origin X="0.5" Y="0.5" Z="0.5" />
-      <Size X="1" Y="1" Z="1" />
-      <CoGOffset X="0" Y="0" Z="0" />
-      <SensorInfo>
-        <TISSensorInfo DefaultORMFile="dfltORM_CalElement.txt">
-          <UserSpecifiedModels />
-        </TISSensorInfo>
-      </SensorInfo>
-      <ObjectSimulatorInfo RealObjectShape="BLOCKSHAPE" StateActuator="true" SelfSensor="true" AlwaysOnCompilationSheet="false">
-        <VisualizationActuators>
-          <VisualizationActuator ActuatorName="VisuGhostColor" EnableActuator="false" ShowInAnimationList="true">
-            <LightMeshPositions />
-            <VisuPortElements />
-          </VisualizationActuator>
-        </VisualizationActuators>
-      </ObjectSimulatorInfo>
-      <DriverModel DriverModelType="None">
-        <PathFollowerSettings WithPreview="true" PreviewTime="1" DelayTime="0.1" LowSpeedLimit="20" MaxSteeringRate="1200" FrequencyFactor="1" />
-        <GameControllerSettings EnableForceFeedback="true" GameControllerType="LogitechG29" ShiftStrategyType="Automatic" />
-      </DriverModel>
-      <Physics Drag="0.1" Mass="90" MaxAcceleration="0.3" MaxDeceleration="1" ReferenceArea="0.7" RollFriction="0.01" />
-      <Sensors />
-      <ConnectionPoints />
-      <Trajectories />
-      <Cameras />
-    </Actor>
     <Actor xsi:type="Box" Description="" id="Box_2" UniqueId="373" SensorIDDetection="true" NumericalID="10" ObjectTypeID="5" ParticipateInCollisionDetection="false" DynamicsConfiguration="None" DiscreteModeActivated="false" Reference="false" UserSpecifiedControl="false" JavaClass="" GhostColor="64646464" Color="IndianRed (FFCD5C5C)" BoxHeight="1" BoxLength="1" BoxWidth="1">
       <Location X="79.270881652832031" Y="13.737903594970703" Z="0.5" />
       <Orientation Bank="0" Tilt="0" Heading="0" />
@@ -4202,12 +4173,11 @@
     </UserObjectType>
     <UserObjectType xsi:type="PredefinedSemanticCategory" Name="CalibrationElement" Color="FFFFFF00" PredefinedEnumType="CalibrationElement">
       <CategorizedObjects>
-        <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_1" UniqueId="262" />
-        <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_2" UniqueId="373" />
-        <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_3" UniqueId="374" />
         <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_4" UniqueId="516" />
         <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_5" UniqueId="527" />
         <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_6" UniqueId="529" />
+        <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_3" UniqueId="374" />
+        <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_2" UniqueId="373" />
       </CategorizedObjects>
     </UserObjectType>
     <UserObjectType xsi:type="PredefinedSemanticCategory" Name="Trailer" Color="FFFF00FF" PredefinedEnumType="Trailer">
@@ -4310,15 +4280,6 @@
     <ObjectColorID Color="FF00007F">
       <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Audi_A8_Sedan_2" UniqueId="85" />
     </ObjectColorID>
-    <ObjectColorID Color="FF00FF00">
-      <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_1" UniqueId="262" />
-    </ObjectColorID>
-    <ObjectColorID Color="FFFF0000">
-      <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_2" UniqueId="373" />
-    </ObjectColorID>
-    <ObjectColorID Color="FF0000FF">
-      <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_3" UniqueId="374" />
-    </ObjectColorID>
     <ObjectColorID Color="FFBFBF00">
       <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_4" UniqueId="516" />
     </ObjectColorID>
@@ -4327,6 +4288,12 @@
     </ObjectColorID>
     <ObjectColorID Color="FFFFBF00">
       <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_6" UniqueId="529" />
+    </ObjectColorID>
+    <ObjectColorID Color="FFFF0000">
+      <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_3" UniqueId="374" />
+    </ObjectColorID>
+    <ObjectColorID Color="FF00FF00">
+      <SemanticItem xsi:type="SimulationObjectSemanticItem" Name="Box_2" UniqueId="373" />
     </ObjectColorID>
   </ObjectColorIDs>
   <PreScanObjectTypeSettings Description="" id="PreScanObjectTypeSettings" UniqueId="9">
