@@ -23,6 +23,10 @@ Emplanner_matlab
 
 具体安装教程参考百度，需要注意：配置matlab的c编译器（推荐vs2022），prescan版本太高会导致无法使用传感器。
 
+#### 效果演示
+
+[演示视频](./image\README\1682518070163.MP4)
+
 #### 使用
 
 1. 克隆本仓库，本仓库为prescan的项目工程，用prescan加载后，用prescan打开matlab文件即可，第一次打开matlab会编译prescan的项目。
