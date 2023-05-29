@@ -27,9 +27,7 @@ Emplanner_matlab
 [演示视频](./image/README/1682518070163.MP4)
 
 ```HTML
-<video controls="">
-  <source src="video.mov" type="/image/README/1682518070163.MP4">
-</video>
+<iframe height=498 width=510 src="./image/README/1682518070163.MP4">
 ```
 
 
