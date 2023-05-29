@@ -24,7 +24,7 @@ Emplanner_matlab
 具体安装教程参考百度，需要注意：配置matlab的c编译器（推荐vs2022），prescan版本太高会导致无法使用传感器。
 
 #### 效果演示
-[演示视频](image/README/1682518070163.MP4)
+[演示视频](./image/README/1682518070163.MP4)
 [演示视频](./image/README/1682518070163.MP4)
 
 #### 使用
