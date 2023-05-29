@@ -25,7 +25,9 @@ Emplanner_matlab
 
 #### 效果演示
 [演示视频](./image/README/1682518070163.MP4)
-![演示视频](image/README/1682518070163.MP4)
+```html
+<video src="/image/README/1682518070163.MP4"></video>
+
 
 #### 使用
 
